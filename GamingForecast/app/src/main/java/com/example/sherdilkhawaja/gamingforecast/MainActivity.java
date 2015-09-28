@@ -21,8 +21,23 @@ public class MainActivity extends AppCompatActivity {
         //This is how you make the list of upcoming games for the app...
         //First by making the array, which we turn into the list
         final String[] upcomingGames = {
-                "Bloodborne - PS4 - 2/25/2015", "METAL GEAR SOLID V - PS4/XB1/PC - 9/1/2015",
-                "THE WITCHER 3 - PS4/XB1 -3/16/2015", "FINAL FANTASY XV - PS4/XB1 - TBA 2016"};
+                "NBA 2K16 - PS4/XB1/PC - 9/29/2015",
+                "NBA Live 16 - PS4/XB1/PC - 9/29/2015",
+                "Persona 4: Dancing All Night - PS4/XB1/PC - 9/29/2015",
+                "Digaea 5 - PS4 - 10/6/2015",
+                "Uncharted Collection - PS4 - 10/9/2015",
+                "Tales of Zestiria - PS4/PC - 10/20/2015",
+                "WWE 2K16 - PS4/XB1/PC - 10/27/2015",
+                "Divinity Original Sin - PS4 - 10/27/2015",
+                "Call of Duty: Black Ops III - PS4/XB1/PC - 11/6/2015",
+                "Star Wars BattleFront - PS4/XB1/PC - 11/17/2015",
+                "Sword Art Online: Lost Song - PS4 - 11/17/2015",
+                "Deadpool - PS4/XB1 - 11/17/2015",
+                "Just Cause 3 - PS4/XB1 - 12/1/2015",
+                "Bloodborne: The Old Hunters - PS4 - 12/1/2015"
+
+
+        };
 
         //The ListAdapter turns the Array into a List
 
@@ -30,9 +45,10 @@ public class MainActivity extends AppCompatActivity {
                 upcomingGames);
         //This tells us where to put the array in which layout
         ListView theListView = (ListView) findViewById(R.id.UpcomingGames);
-        //tells the listview which data to use
+        //Tells the ListView which data to use
         theListView.setAdapter(theAdapter);
 
+        //when the user clicks, the app notifies the user
         theListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long l) {
