@@ -12,6 +12,7 @@ import com.example.sherdilkhawaja.gamingforecast.Product;
 import com.google.gson.Gson;
 
 
+
 public class SharedPreference {
 
     public static final String PREFS_NAME = "Gaming Forecast";
@@ -29,7 +30,8 @@ public class SharedPreference {
         settings = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
         editor = settings.edit();
 
-        Gson gson = new Gson();
+        Gson gson;
+        gson = new Gson();
         String jsonFavorites = gson.toJson(favorites);
 
         editor.putString(FAVORITES, jsonFavorites);
