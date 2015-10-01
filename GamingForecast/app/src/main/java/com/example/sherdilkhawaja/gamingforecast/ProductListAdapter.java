@@ -1,9 +1,5 @@
 package com.example.sherdilkhawaja.gamingforecast;
 
-/**
- * Created by sherdilkhawaja on 9/29/15.
- */
-
 //This is the custom class which displays product name, description, price and favorites
 import java.util.List;
 

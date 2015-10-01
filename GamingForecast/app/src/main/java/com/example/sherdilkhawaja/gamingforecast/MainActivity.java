@@ -26,9 +26,9 @@ public class MainActivity extends FragmentActivity {
 
         FragmentManager fragmentManager = getSupportFragmentManager();
 
-		/*
-		 * This is called when orientation is changed.
-		 */
+        /*
+         * This is called when orientation is changed.
+         */
         if (savedInstanceState != null) {
             if (savedInstanceState.containsKey("content")) {
                 String content = savedInstanceState.getString("content");
@@ -99,7 +99,6 @@ public class MainActivity extends FragmentActivity {
         }
     }
 
-    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     protected void setFragmentTitle(int resourseId) {
         setTitle(resourseId);
         getActionBar().setTitle(resourseId);

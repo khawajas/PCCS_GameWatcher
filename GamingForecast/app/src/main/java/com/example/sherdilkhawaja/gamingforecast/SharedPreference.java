@@ -8,10 +8,9 @@ import java.util.List;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
-import com.example.sherdilkhawaja.gamingforecast.Product;
 import com.google.gson.Gson;
 
-
+import com.example.sherdilkhawaja.gamingforecast.Product;
 
 public class SharedPreference {
 
@@ -30,13 +29,12 @@ public class SharedPreference {
         settings = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
         editor = settings.edit();
 
-        Gson gson;
-        gson = new Gson();
+        Gson gson = new Gson();
         String jsonFavorites = gson.toJson(favorites);
 
         editor.putString(FAVORITES, jsonFavorites);
 
-        editor.commit();
+        editor.apply();
     }
 
     public void addFavorite(Context context, Product product)
