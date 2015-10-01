@@ -101,8 +101,8 @@ public class MainActivity extends FragmentActivity {
     }
 
     protected void setFragmentTitle(int resourceId) {
-        setTitle("Test");
-        getActionBar().setTitle("Test");
+        setTitle(resourceId);
+        getActionBar().setTitle(resourceId);
 
     }
 
