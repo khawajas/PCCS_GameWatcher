@@ -1,8 +1,5 @@
 package com.example.sherdilkhawaja.gamingforecast;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.os.Build;
@@ -19,10 +16,8 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.sherdilkhawaja.gamingforecast.R;
-import com.example.sherdilkhawaja.gamingforecast.SharedPreference;
-import com.example.sherdilkhawaja.gamingforecast.Product;
-import com.example.sherdilkhawaja.gamingforecast.ProductListAdapter;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ProductListFragment extends Fragment implements
         OnItemClickListener, OnItemLongClickListener  {
@@ -121,7 +116,7 @@ public class ProductListFragment extends Fragment implements
     @Override
     public void onResume() {
         getActivity().setTitle(R.string.app_name);
-        getActivity().getActionBar().setTitle(R.string.app_name);
+        //getActivity().getActionBar().setTitle(R.string.app_name);
         super.onResume();
     }
 

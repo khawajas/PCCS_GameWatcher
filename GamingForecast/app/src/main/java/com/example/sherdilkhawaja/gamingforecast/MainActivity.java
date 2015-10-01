@@ -1,9 +1,6 @@
 package com.example.sherdilkhawaja.gamingforecast;
 
-import android.annotation.TargetApi;
-import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -11,33 +8,30 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.example.sherdilkhawaja.gamingforecast.FavoriteListFragment;
-import com.example.sherdilkhawaja.gamingforecast.ProductListFragment;
-
 public class MainActivity extends FragmentActivity {
 
     private Fragment contentFragment;
     ProductListFragment pdtListFragment;
-    FavoriteListFragment  favListFragment;
+    FavoriteListFragment favListFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         FragmentManager fragmentManager = getSupportFragmentManager();
 
-        /*
-         * This is called when orientation is changed.
-         */
         if (savedInstanceState != null) {
             if (savedInstanceState.containsKey("content")) {
                 String content = savedInstanceState.getString("content");
-                if (content.equals(FavoriteListFragment.ARG_ITEM_ID)) {
-                    if (fragmentManager.findFragmentByTag(FavoriteListFragment.ARG_ITEM_ID) != null) {
-                        setFragmentTitle(R.string.favorites);
-                        contentFragment = fragmentManager
-                                .findFragmentByTag(FavoriteListFragment.ARG_ITEM_ID);
+                if (content != null) {
+                    if (content.equals(FavoriteListFragment.ARG_ITEM_ID)) {
+                        if (fragmentManager.findFragmentByTag(FavoriteListFragment.ARG_ITEM_ID) != null) {
+                            setFragmentTitle(R.string.favorites);
+                            contentFragment = fragmentManager
+                                    .findFragmentByTag(FavoriteListFragment.ARG_ITEM_ID);
+                        }
                     }
                 }
             }
@@ -46,8 +40,12 @@ public class MainActivity extends FragmentActivity {
                         .findFragmentByTag(ProductListFragment.ARG_ITEM_ID);
                 contentFragment = pdtListFragment;
             }
-        } else {
-            pdtListFragment = new ProductListFragment();
+        }
+
+    else
+
+    {
+        pdtListFragment = new ProductListFragment();
             setFragmentTitle(R.string.app_name);
             switchContent(pdtListFragment, ProductListFragment.ARG_ITEM_ID);
         }
@@ -91,7 +89,7 @@ public class MainActivity extends FragmentActivity {
             FragmentTransaction transaction = fragmentManager
                     .beginTransaction();
             transaction.replace(R.id.content_frame, fragment, tag);
-            //Only FavoriteListFragment is added to the back stack.
+
             if (!(fragment instanceof ProductListFragment)) {
                 transaction.addToBackStack(tag);
             }
@@ -100,19 +98,13 @@ public class MainActivity extends FragmentActivity {
         }
     }
 
-    @Nullable
     protected void setFragmentTitle(int resourceId) {
         setTitle(resourceId);
-        getActionBar().setTitle(resourceId);
+        //getActionBar().setTitle(resourceId);
 
     }
 
-    /*
-     * We call super.onBackPressed(); when the stack entry count is > 0. if it
-     * is instanceof ProductListFragment or if the stack entry count is == 0, then
-     * we finish the activity.
-     * In other words, from ProductListFragment on back press it quits the app.
-     */
+
     @Override
     public void onBackPressed() {
         FragmentManager fm = getSupportFragmentManager();

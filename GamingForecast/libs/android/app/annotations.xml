@@ -1,0 +1,5 @@
+<root>
+  <item name='android.app.Activity android.app.ActionBar getActionBar()'>
+    <annotation name='java.lang.annotation.Deprecated' />
+  </item>
+</root>
