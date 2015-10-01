@@ -3,6 +3,7 @@ package com.example.sherdilkhawaja.gamingforecast;
 import android.annotation.TargetApi;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -99,9 +100,10 @@ public class MainActivity extends FragmentActivity {
         }
     }
 
-    protected void setFragmentTitle(int resourseId) {
-        setTitle(resourseId);
-        getActionBar().setTitle(resourseId);
+    @Nullable
+    protected void setFragmentTitle(int resourceId) {
+        setTitle(resourceId);
+        getActionBar().setTitle(resourceId);
 
     }
 
