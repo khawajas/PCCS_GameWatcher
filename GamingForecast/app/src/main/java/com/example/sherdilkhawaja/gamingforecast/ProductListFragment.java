@@ -63,7 +63,10 @@ public class ProductListFragment extends Fragment implements
         Product product2 = new Product(2, "Kingdom Hearts III", "2/25/2015", "PS4/XBox 1");
         Product product3 = new Product(3, "Final Fantasy XV", "2/25/2015",  "PS4");
         Product product4 = new Product(4, "Metal Gear Solid V", "2/25/2015", "PS4");
-        Product product5 = new Product(5, "Xenoblade Chronicles X", "2/25/2015", "PS4");
+        Product product5 = new Product(5, "Pokemon Rainbow", "7/25/2016", "3DS");
+        Product product6 = new Product(6, "Call of Duty: Black Ops III", "10/12/2015", "PS4/Xbox 1");
+        Product product7 = new Product(7, "Destiny: The Taken King", "9/20/2015", "PS4/PC");
+        Product product8 = new Product(8, "Fallout 4", "11/10/2015", "PS4/Xbox 1/PC");
 
 
         products = new ArrayList<Product>();
@@ -72,6 +75,9 @@ public class ProductListFragment extends Fragment implements
         products.add(product3);
         products.add(product4);
         products.add(product5);
+        products.add(product6);
+        products.add(product7);
+        products.add(product8);
 
     }
 

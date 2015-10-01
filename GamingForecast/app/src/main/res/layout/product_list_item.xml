@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:background="@color/product_list_item_bg"
+    android:background="#000000"
     android:descendantFocusability="blocksDescendants" >
 
     <RelativeLayout
@@ -13,12 +13,14 @@
         <TextView
             android:id="@+id/txt_pdt_name"
             android:layout_width="wrap_content"
+            android:gravity="center"
             android:layout_height="wrap_content"
             android:padding="6dp" />
 
         <TextView
             android:id="@+id/txt_pdt_price"
             android:layout_width="wrap_content"
+            android:gravity="center"
             android:layout_height="wrap_content"
             android:layout_below="@+id/txt_pdt_name"
             android:padding="6dp" />
@@ -26,6 +28,7 @@
         <TextView
             android:id="@+id/txt_pdt_desc"
             android:layout_width="wrap_content"
+            android:gravity="center"
             android:layout_height="wrap_content"
             android:layout_below="@+id/txt_pdt_price"
             android:padding="6dp" />
