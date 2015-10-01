@@ -75,8 +75,8 @@ public class ProductListAdapter extends ArrayAdapter<Product>{
         }
         Product product = (Product) getItem(position);
         holder.productGameTxt.setText(product.getGame());
-        holder.productPlatformTxt.setText(product.getPlatform());
-        holder.productReleaseTxt.setText(product.getReleaseDate() + "");
+//        holder.productPlatformTxt.setText(product.getPlatform());
+//        holder.productReleaseTxt.setText(product.getReleaseDate() + "");
 
         /*If a product exists in shared preferences then set heart_red drawable
          * and set a tag*/

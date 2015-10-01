@@ -144,7 +144,7 @@ public class FavoriteListFragment extends Fragment {
     @Override
     public void onResume() {
         getActivity().setTitle(R.string.favorites);
-        getActivity().getActionBar().setTitle(R.string.favorites);
+        //getActivity().getActionBar().setTitle(R.string.favorites);
         super.onResume();
     }
 }

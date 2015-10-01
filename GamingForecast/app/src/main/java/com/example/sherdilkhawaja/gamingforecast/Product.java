@@ -79,7 +79,7 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Game [Title=" + game + ", Release Date="
-                + releaseDate + ", Platform=" + platform + "]";
+        return "Game: " + game + "\n" + "Release Date: "
+                + releaseDate + "\n" + "Platform: " + platform + "";
     }
 }

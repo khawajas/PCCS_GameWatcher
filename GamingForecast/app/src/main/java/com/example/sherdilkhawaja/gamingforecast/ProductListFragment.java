@@ -59,11 +59,11 @@ public class ProductListFragment extends Fragment implements
 
     private void setProducts() {
 
-        Product product1 = new Product(1, "Bloodborne", "PS4", "2/25/2015");
-        Product product2 = new Product(2, "Kingdom Hearts 3", "PS4/XB1", "2/25/2015");
-        Product product3 = new Product(3, "Final Fantasy XV", "PS4", "2/25/2015");
-        Product product4 = new Product(4, "Metal Gear Solid V", "PS4", "2/25/2015");
-        Product product5 = new Product(5, "Xenoblade Chronicles X", "PS4", "2/25/2015");
+        Product product1 = new Product(1, "Bloodborne", "2/25/2015", "PS4");
+        Product product2 = new Product(2, "Kingdom Hearts III", "2/25/2015", "PS4/XBox 1");
+        Product product3 = new Product(3, "Final Fantasy XV", "2/25/2015",  "PS4");
+        Product product4 = new Product(4, "Metal Gear Solid V", "2/25/2015", "PS4");
+        Product product5 = new Product(5, "Xenoblade Chronicles X", "2/25/2015", "PS4");
 
 
         products = new ArrayList<Product>();
@@ -116,7 +116,7 @@ public class ProductListFragment extends Fragment implements
     @Override
     public void onResume() {
         getActivity().setTitle(R.string.app_name);
-        //getActivity().getActionBar().setTitle(R.string.app_name);
+//        getActivity().getActionBar().setTitle(R.string.app_name);
         super.onResume();
     }
 

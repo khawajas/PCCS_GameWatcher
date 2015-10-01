@@ -8,6 +8,8 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import static com.example.sherdilkhawaja.gamingforecast.R.string.app_name;
+
 public class MainActivity extends FragmentActivity {
 
     private Fragment contentFragment;
@@ -46,7 +48,7 @@ public class MainActivity extends FragmentActivity {
 
     {
         pdtListFragment = new ProductListFragment();
-            setFragmentTitle(R.string.app_name);
+           // setFragmentTitle(R.string.app_name);
             switchContent(pdtListFragment, ProductListFragment.ARG_ITEM_ID);
         }
     }
@@ -99,8 +101,8 @@ public class MainActivity extends FragmentActivity {
     }
 
     protected void setFragmentTitle(int resourceId) {
-        setTitle(resourceId);
-        //getActionBar().setTitle(resourceId);
+        setTitle("Test");
+        getActionBar().setTitle("Test");
 
     }
 
