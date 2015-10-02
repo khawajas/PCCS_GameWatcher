@@ -34,7 +34,7 @@ public class EspressoTest8 extends ActivityInstrumentationTestCase2<MainActivity
         getActivity();
     }
 
-    public void VideoFailTest() {
+    public void testClickAndCheckDisplayed() {
 
 
     }

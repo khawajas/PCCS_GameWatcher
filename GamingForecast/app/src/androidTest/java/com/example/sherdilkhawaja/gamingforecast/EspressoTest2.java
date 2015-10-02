@@ -22,7 +22,7 @@ public class EspressoTest2 extends ActivityInstrumentationTestCase2<MainActivity
         getActivity();
     }
 
-    public void SwiperVertical() {
+    public void testClickAndCheckDisplayed() {
 
         onView(withId(R.id.list_product)).perform(swipeDown());
         onView(withId(R.id.list_product)).perform(swipeUp());

@@ -22,7 +22,7 @@ public class EspressoTest5 extends ActivityInstrumentationTestCase2<MainActivity
         getActivity();
     }
 
-    public void Noinfo() {
+    public void testClickAndCheckDisplayed() {
 
     //code for favorites list
         onView(withId(R.id.list_product)).perform(click());

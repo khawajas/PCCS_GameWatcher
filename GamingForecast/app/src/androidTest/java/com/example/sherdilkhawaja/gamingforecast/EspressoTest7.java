@@ -13,6 +13,7 @@ import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.isEnabled;
 import static android.support.test.espresso.matcher.ViewMatchers.withContentDescription;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
+import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.hasToString;
 import static org.hamcrest.core.AllOf.allOf;
 import static org.hamcrest.core.StringStartsWith.startsWith;
@@ -35,11 +36,10 @@ public class EspressoTest7 extends ActivityInstrumentationTestCase2<MainActivity
         getActivity();
     }
 
-    public void SortVideoGenre() {
+    public void testClickAndCheckDisplayed() {
 
-        onView(withContentDescription("Youtube")).perform(click());
-        assertNotNull(R.id.list_product);
-
+        onView(withId(R.id.button_so)).check(matches(allOf(withText("Youtube"), isDisplayed())));
+        assertNotNull(R.id.button_so);
 
     }
 }
