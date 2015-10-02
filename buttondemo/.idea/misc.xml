@@ -37,7 +37,11 @@
     <ConfirmationsSetting value="0" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
+<<<<<<< HEAD:buttondemo/.idea/misc.xml
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" assert-keyword="true" jdk-15="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+=======
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" default="true" assert-keyword="true" jdk-15="true" project-jdk-name="1.7" project-jdk-type="JavaSDK">
+>>>>>>> c336fae6f9e6eb0d612016d601852b1f4e94d0b8:GamingForecast/.idea/misc.xml
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
