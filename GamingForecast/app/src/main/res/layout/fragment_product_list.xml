@@ -18,25 +18,22 @@
         android:scrollbarStyle="outsideOverlay" >
     </ListView>
 
-    <Button android:layout_height="38dp"
+    <Button android:layout_height="1dp"
         android:clickable="true"
         android:autoLink="web"
         android:cursorVisible="true"
-        android:layout_width="100dp"
+        android:layout_width="1dp"
         android:id="@+id/buttonXD"
         android:text="Youtube"
         android:linksClickable="true"
         android:onClick="goToSu"
-        android:layout_marginTop="48dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/linearLayout"
-        android:layout_alignStart="@+id/linearLayout"></Button>
+        android:layout_alignParentTop="true"></Button>
 
-    <Button android:layout_height="35dp"
+    <Button android:layout_height="1dp"
         android:clickable="true"
         android:autoLink="web"
         android:cursorVisible="true"
-        android:layout_width="100dp"
+        android:layout_width="1dp"
         android:id="@+id/badbutton"
         android:text="Youtube"
         android:linksClickable="true"
