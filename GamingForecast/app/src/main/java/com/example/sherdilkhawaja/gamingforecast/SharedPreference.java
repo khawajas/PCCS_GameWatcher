@@ -1,5 +1,5 @@
 package com.example.sherdilkhawaja.gamingforecast;
-
+import static com.example.sherdilkhawaja.gamingforecast.R.string.names;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -13,7 +13,7 @@ import java.util.List;
 
 public class SharedPreference {
 
-    public static final String PREFS_NAME = "Gaming Forecast";
+    public static final String PREFS_NAME = "Gaming_Forecast";
     public static final String FAVORITES = "Favorites";
 
     public SharedPreference() {

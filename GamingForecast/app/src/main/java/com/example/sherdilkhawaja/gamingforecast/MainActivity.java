@@ -8,7 +8,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import static com.example.sherdilkhawaja.gamingforecast.R.string.app_name;
+import static com.example.sherdilkhawaja.gamingforecast.R.string.names;
 
 public class MainActivity extends FragmentActivity {
 
@@ -48,7 +48,7 @@ public class MainActivity extends FragmentActivity {
 
     {
         pdtListFragment = new ProductListFragment();
-           // setFragmentTitle(R.string.app_name);
+           setFragmentTitle(R.string.names);
             switchContent(pdtListFragment, ProductListFragment.ARG_ITEM_ID);
         }
     }

@@ -121,8 +121,8 @@ public class ProductListFragment extends Fragment implements
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     @Override
     public void onResume() {
-        getActivity().setTitle(R.string.app_name);
-//        getActivity().getActionBar().setTitle(R.string.app_name);
+        getActivity().setTitle(R.string.names);
+        getActivity().getActionBar().setTitle(R.string.names);
         super.onResume();
     }
 
