@@ -35,7 +35,7 @@ public class EspressoTest6 extends ActivityInstrumentationTestCase2<MainActivity
         getActivity();
     }
 
-    public void testClickAndCheckDisplayed() {
+    public void LoadMoreInfo() {
 
         onView(withId(R.id.list_product)).perform(doubleClick());
         assertNotNull(R.id.list_product);

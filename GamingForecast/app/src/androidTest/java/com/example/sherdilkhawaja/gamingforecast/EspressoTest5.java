@@ -24,7 +24,9 @@ public class EspressoTest5 extends ActivityInstrumentationTestCase2<MainActivity
 
     public void Noinfo() {
 
-
+    //code for favorites list
+        onView(withId(R.id.list_product)).perform(click());
+        //replace list_product with favorites list location.. cant find.
 
 
     }

@@ -11,6 +11,7 @@ import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.isClickable;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.isEnabled;
+import static android.support.test.espresso.matcher.ViewMatchers.withContentDescription;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static org.hamcrest.Matchers.hasToString;
 import static org.hamcrest.core.AllOf.allOf;
@@ -35,6 +36,9 @@ public class EspressoTest7 extends ActivityInstrumentationTestCase2<MainActivity
     }
 
     public void SortVideoGenre() {
+
+        onView(withContentDescription("Youtube")).perform(click());
+        assertNotNull(R.id.list_product);
 
 
     }
