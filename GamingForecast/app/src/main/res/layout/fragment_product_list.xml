@@ -18,15 +18,45 @@
         android:scrollbarStyle="outsideOverlay" >
     </ListView>
 
+    <Button android:layout_height="35dp"
+        android:clickable="true"
+        android:autoLink="web"
+        android:cursorVisible="true"
+        android:layout_width="100dp"
+        android:id="@+id/buttonXD"
+        android:text="Youtube"
+        android:linksClickable="true"
+        android:onClick="goToSu"
+        android:layout_marginTop="41dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/linearLayout"
+        android:layout_alignStart="@+id/linearLayout"></Button>
+
+    <Button android:layout_height="35dp"
+        android:clickable="true"
+        android:autoLink="web"
+        android:cursorVisible="true"
+        android:layout_width="100dp"
+        android:id="@+id/badbutton"
+        android:text="Youtube"
+        android:linksClickable="true"
+        android:onClick="badurl"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/buttonXD"
+        android:layout_alignLeft="@+id/linearLayout"
+        android:layout_alignStart="@+id/linearLayout"></Button>
+
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="horizontal"
         android:layout_width="fill_parent"
         android:layout_height="50dp"
         android:weightSum="1"
         android:id="@+id/linearLayout"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/buttonXD"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="9dp"
+        android:layout_marginStart="9dp">
 
     </LinearLayout>
 

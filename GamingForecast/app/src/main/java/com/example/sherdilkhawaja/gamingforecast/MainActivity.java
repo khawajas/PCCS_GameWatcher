@@ -62,7 +62,11 @@ public class MainActivity extends FragmentActivity {
 
     //Make sure we add the other videos later, this will suffice.
     public void goToSu (View view) {
-        goToUrl ("https://www.youtube.com/watch?v=tBGjx-4_R10");
+        goToUrl("https://www.youtube.com/watch?v=tBGjx-4_R10");
+    }
+
+    public void badurl (View view) {
+        goToUrl("https://wwww.youtube.com/idkbadurl");
     }
 
     private void goToUrl (String url) {

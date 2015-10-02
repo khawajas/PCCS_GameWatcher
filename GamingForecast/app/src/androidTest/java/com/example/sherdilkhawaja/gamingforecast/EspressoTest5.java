@@ -25,7 +25,8 @@ public class EspressoTest5 extends ActivityInstrumentationTestCase2<MainActivity
     public void testClickAndCheckDisplayed() {
 
     //code for favorites list
-        onView(withId(R.id.list_product)).perform(click());
+        onView(withId(R.id.linearLayout)).perform(click());
+        assertNotNull(R.id.linearLayout);
         //replace list_product with favorites list location.. cant find.
 
 
