@@ -7,4 +7,12 @@
         android:orderInCategory="200"
         app:showAsAction="ifRoom|withText"
         android:title="@string/favorites"/>
+
+    <item
+        android:id="@+id/options_menu_main_search"
+        android:actionViewClass="android.widget.SearchView"
+        android:icon="@drawable/ic_search"
+        android:showAsAction="always"
+        android:title="Search"
+        GameForecast:ignore="AppCompatResource" />
 </menu>

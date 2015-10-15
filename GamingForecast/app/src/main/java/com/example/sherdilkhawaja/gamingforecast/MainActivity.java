@@ -1,21 +1,18 @@
 package com.example.sherdilkhawaja.gamingforecast;
 
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
-import android.app.Activity;
-import android.view.View;
 import android.net.Uri;
-import android.widget.Button;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-import android.content.Intent;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View.OnClickListener;
-
-import static com.example.sherdilkhawaja.gamingforecast.R.string.names;
+import android.view.View;
+import android.widget.SearchView;
 
 public class MainActivity extends FragmentActivity {
 
@@ -89,7 +86,13 @@ public class MainActivity extends FragmentActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
+
+        SearchManager searchManager = (SearchManager) getSystemService( Context.SEARCH_SERVICE );
+        SearchView searchView = (SearchView) menu.findItem( R.id.options_menu_main_search ).getActionView();
+
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+
+        return super.onCreateOptionsMenu( menu );
     }
 
     @Override

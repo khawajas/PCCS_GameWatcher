@@ -11,7 +11,6 @@
             android:label="@string/names"
             android:windowSoftInputMode="stateHidden"
             android:launchMode="singleTask"
-            android:parentActivityName=".MainActivity" >
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,7 +18,8 @@
             </intent-filter>
 
             <meta-data
-                android:name="android.app.searchable">
+                android:name="android.app.searchable"
+                android:resource="@layout//searchable">
 
             </meta-data>
 
