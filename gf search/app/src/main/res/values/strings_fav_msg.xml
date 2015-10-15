@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="add_favr">Added game to your Favorites tab!</string>
+    <string name="remove_favr">Removed game from your Favorites tab!</string>
+    <string name="no_favorites_items">Currently no favorites added! Press and hold on a game to add it!</string>
+    <string name="no_favorites_msg">Press/hold on the game to add to favorites.</string>
+    <string name="favorites_remove_msg">Press/hold on the game to remove from favorites.</string>
+</resources>
