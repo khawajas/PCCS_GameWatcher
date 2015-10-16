@@ -1,8 +1,6 @@
 package com.example.sherdilkhawaja.gamingforecast;
 
 //This is the custom class which displays product name, description, price and favorites
-import java.util.List;
-
 import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -12,9 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.sherdilkhawaja.gamingforecast.R;
-import com.example.sherdilkhawaja.gamingforecast.Product;
-import com.example.sherdilkhawaja.gamingforecast.SharedPreference;
+import java.util.List;
 
 
 public class ProductListAdapter extends ArrayAdapter<Product>{

@@ -88,7 +88,7 @@ public class MainActivity extends FragmentActivity {
         getMenuInflater().inflate(R.menu.menu_main, menu);
 
         SearchManager searchManager = (SearchManager) getSystemService( Context.SEARCH_SERVICE );
-        SearchView searchView = (SearchView) menu.findItem( R.id.options_menu_main_search ).getActionView();
+        SearchView searchView = (SearchView) menu.findItem(R.id.options_menu_main_search).getActionView();
 
         searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
 
