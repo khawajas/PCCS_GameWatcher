@@ -6,15 +6,26 @@
         android:allowBackup="true"
         android:icon="@mipmap/lightning"
         android:label="@string/names">
+
+        <meta-data
+            android:name="android.app.default_searchable"
+            android:value=".app.Search" />
+
         <activity
             android:name="MainActivity"
-            android:label="@string/names" >
+            android:label="@string/names">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
+                <action android:name="android.intent.action.MAIN"></action>
+                <action android:name="android.intent.action.SEARCH" />/>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@layout/searchable">
+            </meta-data>
+        </activity>
+        <activity android:name="com.example.sherdilkhawaja.gamingforecast.Banner" >
         </activity>
     </application>
-
 </manifest>

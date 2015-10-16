@@ -41,7 +41,7 @@ public class ProductListFragment extends Fragment implements
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-             Bundle savedInstanceState)
+                             Bundle savedInstanceState)
     {
         View view = inflater.inflate(R.layout.fragment_product_list, container,
                 false);
@@ -59,14 +59,14 @@ public class ProductListFragment extends Fragment implements
 
     private void setProducts() {
 
-        Product product1 = new Product(1, "Bloodborne", 4, "2/25/2015", "PS4");
-        Product product2 = new Product(2, "Kingdom Hearts III", 5, "2/25/2015", "PS4/XBox 1");
-        Product product3 = new Product(3, "Final Fantasy XV", 5, "2/25/2015",  "PS4");
-        Product product4 = new Product(4, "Metal Gear Solid V", 5, "2/25/2015", "PS4");
-        Product product5 = new Product(5, "Pokemon Rainbow", 1, "7/25/2016", "3DS");
-        Product product6 = new Product(6, "Call of Duty: Black Ops III", 3, "10/12/2015", "PS4/Xbox 1");
-        Product product7 = new Product(7, "Destiny: The Taken King", 3, "9/20/2015", "PS4/PC");
-        Product product8 = new Product(8, "Fallout 4", 4, "11/10/2015", "PS4/Xbox 1/PC");
+        Product product1 = new Product(1, "Bloodborne", "2/25/2015", "PS4");
+        Product product2 = new Product(2, "Kingdom Hearts III", "2/25/2015", "PS4/XBox 1");
+        Product product3 = new Product(3, "Final Fantasy XV", "2/25/2015",  "PS4");
+        Product product4 = new Product(4, "Metal Gear Solid V", "2/25/2015", "PS4");
+        Product product5 = new Product(5, "Pokemon Rainbow", "7/25/2016", "3DS");
+        Product product6 = new Product(6, "Call of Duty: Black Ops III", "10/12/2015", "PS4/Xbox 1");
+        Product product7 = new Product(7, "Destiny: The Taken King", "9/20/2015", "PS4/PC");
+        Product product8 = new Product(8, "Fallout 4", "11/10/2015", "PS4/Xbox 1/PC");
 
 
         products = new ArrayList<Product>();

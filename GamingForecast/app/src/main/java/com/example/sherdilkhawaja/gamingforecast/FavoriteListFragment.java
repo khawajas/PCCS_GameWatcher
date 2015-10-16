@@ -19,10 +19,6 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.sherdilkhawaja.gamingforecast.R;
-import com.example.sherdilkhawaja.gamingforecast.ProductListAdapter;
-import com.example.sherdilkhawaja.gamingforecast.Product;
-import com.example.sherdilkhawaja.gamingforecast.SharedPreference;
 
 public class FavoriteListFragment extends Fragment {
 

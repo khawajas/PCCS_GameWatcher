@@ -1,6 +1,7 @@
 package com.example.sherdilkhawaja.gamingforecast;
 
 //This is the custom class which displays product name, description, price and favorites
+import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Activity;
@@ -23,10 +24,14 @@ public class ProductListAdapter extends ArrayAdapter<Product>{
     List<Product> products;
     SharedPreference sharedPreference;
 
+    private ArrayList gameList;
+    private ArrayList filteredList;
+
     public ProductListAdapter (Context context, List<Product> products) {
         super(context, R.layout.product_list_item, products);
         this.context = context;
         this.products = products;
+        getFilter();
         sharedPreference = new SharedPreference();
     }
 
@@ -123,5 +128,6 @@ public class ProductListAdapter extends ArrayAdapter<Product>{
         products.remove(product);
         notifyDataSetChanged();
     }
+
 }
 

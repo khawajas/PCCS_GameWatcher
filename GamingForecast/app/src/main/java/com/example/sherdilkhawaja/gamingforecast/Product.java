@@ -14,12 +14,10 @@ public class Product {
         super();
     }
 
-    public Product(int id, String game, int rating, String releaseDate, String platform) {
+    public Product(int id, String game, String releaseDate, String platform) {
         super();
         this.id = id;
         this.game = game;
-        this.rating = rating;
-        this.rating = rating;
         this.releaseDate = releaseDate;
         this.platform = platform;
     }

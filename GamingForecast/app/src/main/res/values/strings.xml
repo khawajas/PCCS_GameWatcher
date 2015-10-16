@@ -3,4 +3,7 @@
     <string name="names">Gaming Forecast!</string>
     <string name="action_settings">Settings.</string>
     <string name="favorites">Favorites</string>
+    <string name="hint">Search for Game</string>
+    <string name="label">Search</string>
+    <string name="mostpopular">Most Popular</string>
 </resources>
