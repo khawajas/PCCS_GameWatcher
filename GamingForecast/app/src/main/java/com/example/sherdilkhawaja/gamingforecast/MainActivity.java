@@ -1,145 +1,68 @@
 package com.example.sherdilkhawaja.gamingforecast;
 
-import android.app.SearchManager;
-import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.SearchView;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListAdapter;
+import android.widget.ListView;
+import android.widget.Toast;
 
-public class MainActivity extends FragmentActivity {
-
-    private Fragment contentFragment;
-    ProductListFragment pdtListFragment;
-    FavoriteListFragment favListFragment;
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        FragmentManager fragmentManager = getSupportFragmentManager();
 
+        //This is how you make the list of upcoming games for the app...
+        //First by making the array, which we turn into the list
+        final String[] upcomingGames = {
+                "Bloodborne - PS4 - 2/25/2015", "METAL GEAR SOLID V - PS4/XB1/PC - 9/1/2015",
+                "THE WITCHER 3 - PS4/XB1 -3/16/2015", "FINAL FANTASY XV - PS4/XB1 - TBA 2016"};
 
+        //The ListAdapter turns the Array into a List
 
-        if (savedInstanceState != null) {
-            if (savedInstanceState.containsKey("content")) {
-                String content = savedInstanceState.getString("content");
-                if (content != null) {
-                    if (content.equals(FavoriteListFragment.ARG_ITEM_ID)) {
-                        if (fragmentManager.findFragmentByTag(FavoriteListFragment.ARG_ITEM_ID) != null) {
-                            setFragmentTitle(R.string.favorites);
-                            contentFragment = fragmentManager
-                                    .findFragmentByTag(FavoriteListFragment.ARG_ITEM_ID);
-                        }
-                    }
-                }
+        final ListAdapter theAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,
+                upcomingGames);
+        //This tells us where to put the array in which layout
+        ListView theListView = (ListView) findViewById(R.id.UpcomingGames);
+        //tells the listview which data to use
+        theListView.setAdapter(theAdapter);
+
+        theListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long l) {
+                String gamesPicked = "You Selected " +
+                        String.valueOf(theAdapter.getItemId(position));
+                Toast.makeText(MainActivity.this, gamesPicked, Toast.LENGTH_SHORT).show();
             }
-            if (fragmentManager.findFragmentByTag(ProductListFragment.ARG_ITEM_ID) != null) {
-                pdtListFragment = (ProductListFragment) fragmentManager
-                        .findFragmentByTag(ProductListFragment.ARG_ITEM_ID);
-                contentFragment = pdtListFragment;
-            }
-        } else
-
-        {
-            pdtListFragment = new ProductListFragment();
-            setFragmentTitle(R.string.names);
-            switchContent(pdtListFragment, ProductListFragment.ARG_ITEM_ID);
-        }
-
-    }
-
-
-    //Make sure we add the other videos later, this will suffice.
-    public void goToSu (View view) {
-        goToUrl("https://www.youtube.com/watch?v=tBGjx-4_R10");
-    }
-
-    public void badurl (View view) {
-        goToUrl("https://wwww.youtube.com/idkbadurl");
-    }
-
-    private void goToUrl (String url) {
-        Uri uriUrl = Uri.parse(url);
-        Intent launchBrowser = new Intent(Intent.ACTION_VIEW, uriUrl);
-        startActivity(launchBrowser);
-    }
-
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        if (contentFragment instanceof FavoriteListFragment) {
-            outState.putString("content", FavoriteListFragment.ARG_ITEM_ID);
-        } else {
-            outState.putString("content", ProductListFragment.ARG_ITEM_ID);
-        }
-        super.onSaveInstanceState(outState);
+        });
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
-
-        SearchManager searchManager = (SearchManager) getSystemService( Context.SEARCH_SERVICE );
-        SearchView searchView = (SearchView) menu.findItem(R.id.options_menu_main_search).getActionView();
-
-        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
-
-        return super.onCreateOptionsMenu( menu );
+        return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.menu_favorites:
-                setFragmentTitle(R.string.favorites);
-                favListFragment = new FavoriteListFragment();
-                switchContent(favListFragment, FavoriteListFragment.ARG_ITEM_ID);
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
 
-                return true;
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
         }
+
         return super.onOptionsItemSelected(item);
-    }
-
-    public void switchContent(Fragment fragment, String tag) {
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        while (fragmentManager.popBackStackImmediate());
-
-        if (fragment != null) {
-            FragmentTransaction transaction = fragmentManager
-                    .beginTransaction();
-            transaction.replace(R.id.content_frame, fragment, tag);
-
-            if (!(fragment instanceof ProductListFragment)) {
-                transaction.addToBackStack(tag);
-            }
-            transaction.commit();
-            contentFragment = fragment;
-        }
-    }
-
-    protected void setFragmentTitle(int resourceId) {
-        setTitle(resourceId);
-        getActionBar().setTitle(resourceId);
-
-    }
-
-
-    @Override
-    public void onBackPressed() {
-        FragmentManager fm = getSupportFragmentManager();
-        if (fm.getBackStackEntryCount() > 0) {
-            super.onBackPressed();
-        } else if (contentFragment instanceof ProductListFragment
-                || fm.getBackStackEntryCount() == 0) {
-            finish();
-        }
     }
 }

@@ -1,8 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
 <searchable
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:hint="@string/hint"
-    android:includeInGlobalSearch="false"
-    android:label="@string/label"
-    android:searchSettingsDescription="Search Game"
-    android:layout_height="10dp"
-    android:layout_width="10dp"/>
+    xmlns:andriod="http://schemas.android.com/apk/res/android"
+    xmlns:android="http://schemas.android.com/tools"
+    android:label="search"
+    andriod:hint="Search Game"
+    andriod:layout_height="35dp"
+    andriod:layout_width="100dp">
+
+</searchable>
