@@ -1,5 +1,6 @@
 package com.example.sherdilkhawaja.gamingforecast;
 
+<<<<<<< HEAD
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
@@ -48,11 +49,26 @@ public class MainActivity extends FragmentActivity {
         products.add(product8);
 
     }
+=======
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListAdapter;
+import android.widget.ListView;
+import android.widget.Toast;
+
+public class MainActivity extends AppCompatActivity {
+>>>>>>> Realbranch
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+<<<<<<< HEAD
         FragmentManager fragmentManager = getSupportFragmentManager();
 
         if (savedInstanceState != null) {
@@ -105,11 +121,38 @@ public class MainActivity extends FragmentActivity {
             outState.putString("content", ProductListFragment.ARG_ITEM_ID);
         }
         super.onSaveInstanceState(outState);
+=======
+
+        //This is how you make the list of upcoming games for the app...
+        //First by making the array, which we turn into the list
+        final String[] upcomingGames = {
+                "Bloodborne - PS4 - 2/25/2015", "METAL GEAR SOLID V - PS4/XB1/PC - 9/1/2015",
+                "THE WITCHER 3 - PS4/XB1 -3/16/2015", "FINAL FANTASY XV - PS4/XB1 - TBA 2016"};
+
+        //The ListAdapter turns the Array into a List
+
+        final ListAdapter theAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,
+                upcomingGames);
+        //This tells us where to put the array in which layout
+        ListView theListView = (ListView) findViewById(R.id.UpcomingGames);
+        //tells the listview which data to use
+        theListView.setAdapter(theAdapter);
+
+        theListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long l) {
+                String gamesPicked = "You Selected " +
+                        String.valueOf(theAdapter.getItemId(position));
+                Toast.makeText(MainActivity.this, gamesPicked, Toast.LENGTH_SHORT).show();
+            }
+        });
+>>>>>>> Realbranch
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
 
         SearchManager searchManager = (SearchManager) getSystemService( Context.SEARCH_SERVICE );
@@ -122,6 +165,7 @@ public class MainActivity extends FragmentActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+<<<<<<< HEAD
         switch (item.getItemId()) {
             case R.id.menu_favorites:
                 setFragmentTitle(R.string.favorites);
@@ -151,24 +195,18 @@ public class MainActivity extends FragmentActivity {
             }
             transaction.commit();
             contentFragment = fragment;
+=======
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+>>>>>>> Realbranch
         }
-    }
 
-    protected void setFragmentTitle(int resourceId) {
-        setTitle(resourceId);
-        getActionBar().setTitle(resourceId);
-
-    }
-
-
-    @Override
-    public void onBackPressed() {
-        FragmentManager fm = getSupportFragmentManager();
-        if (fm.getBackStackEntryCount() > 0) {
-            super.onBackPressed();
-        } else if (contentFragment instanceof ProductListFragment
-                || fm.getBackStackEntryCount() == 0) {
-            finish();
-        }
+        return super.onOptionsItemSelected(item);
     }
 }
