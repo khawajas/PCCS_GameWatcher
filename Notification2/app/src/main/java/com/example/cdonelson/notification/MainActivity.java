@@ -8,6 +8,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import java.text.DateFormat;
+import java.util.ArrayList;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Calendar;
+
+
 public class MainActivity extends AppCompatActivity {
 
     NotificationCompat.Builder notification;
@@ -20,15 +28,36 @@ public class MainActivity extends AppCompatActivity {
 
         notification = new NotificationCompat.Builder(this);
         notification.setAutoCancel(true);
+
+        ArrayList<Game> gameList = new ArrayList<Game>();
+        gameList.add(new Game("1","Metal Gear","PS4","10/15/2015"));
+        gameList.add(new Game("2","Skyrim","XBox","9/15/2015"));
+        gameList.add(new Game("3", "Fallout 4", "PC", "11/25/2015"));
+        try {
+            for (int i = 0; i <= 2; i++) {
+                checkDate(gameList.get(i));
+            }
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
     }
 
-    public void buckysButtonClicked(View view){
+    public void checkDate(Game inGame) throws ParseException
+    {
+        SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
+        String currentDateTimeString = new SimpleDateFormat("MM/dd/yyyy").format(new Date());
+        if(currentDateTimeString.compareTo(inGame.getGameDate()) ==0)
+        { sendNotification(inGame.getGameName(), inGame.getGamePlatform()); }
+    }
+
+    public void sendNotification(String inName, String inPlatform) {
+
         //Build the notification
         notification.setSmallIcon(R.drawable.big_g);
-        notification.setTicker("This is the ticker");
+        notification.setTicker("New Release!");
         notification.setWhen(System.currentTimeMillis());
-        notification.setContentTitle("Here is the title");
-        notification.setContentText("I am the body text of your notification");
+        notification.setContentTitle(inName);
+        notification.setContentText("has been released for the " + inPlatform);
 
         Intent intent = new Intent(this, MainActivity.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
@@ -38,6 +67,44 @@ public class MainActivity extends AppCompatActivity {
         NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         nm.notify(uniqueID, notification.build());
 
+    }
+
+
+    class Game
+    {
+        private String gameID,gameName,gamePlatform,gameDate;
+
+        Game(String inID, String inName, String inPlatform, String inDate)
+        {
+            this.gameID = inID;
+            this.gameName = inName;
+            this.gamePlatform = inPlatform;
+            this.gameDate = inDate;
+        }
+
+        public String getGameID()
+        { return gameID; }
+
+        public void setGameID(String inID)
+        { this.gameID = inID; }
+
+        public String getGameName()
+        { return gameName; }
+
+        public void setGameName(String inName)
+        { this.gameName = inName; }
+
+        public String getGamePlatform()
+        { return gamePlatform; }
+
+        public void setGamePlatform(String inPlatform)
+        { this.gamePlatform = inPlatform; }
+
+        public String getGameDate()
+        { return gameDate; }
+
+        public void setGameDate(String inDate)
+        { this.gameDate = inDate; }
     }
 
 
