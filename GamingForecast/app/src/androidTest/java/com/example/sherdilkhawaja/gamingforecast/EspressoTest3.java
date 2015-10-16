@@ -21,7 +21,7 @@ public class EspressoTest3 extends ActivityInstrumentationTestCase2<MainActivity
         getActivity();
     }
 
-    public void Swiper() {
+    public void testClickAndCheckDisplayed() {
 
         onView(withId(R.id.list_product)).perform(swipeLeft());
         onView(withId(R.id.list_product)).perform(swipeRight());

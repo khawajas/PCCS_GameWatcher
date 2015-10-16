@@ -1,4 +1,5 @@
 package com.example.sherdilkhawaja.gamingforecast;
+import android.support.test.espresso.assertion.ViewAssertions;
 import android.support.test.espresso.matcher.ViewMatchers;
 import android.view.View;
 
@@ -11,7 +12,10 @@ import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.isClickable;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.isEnabled;
+import static android.support.test.espresso.matcher.ViewMatchers.withContentDescription;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
+import static android.support.test.espresso.matcher.ViewMatchers.withText;
+import static org.hamcrest.Matchers.anyOf;
 import static org.hamcrest.Matchers.hasToString;
 import static org.hamcrest.core.AllOf.allOf;
 import static org.hamcrest.core.StringStartsWith.startsWith;
@@ -34,8 +38,7 @@ public class EspressoTest7 extends ActivityInstrumentationTestCase2<MainActivity
         getActivity();
     }
 
-    public void SortVideoGenre() {
-
+    public void testClickAndCheckDisplayed() {
 
     }
 }

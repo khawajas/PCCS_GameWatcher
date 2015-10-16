@@ -6,16 +6,13 @@ android {
 
     defaultConfig {
         applicationId "com.example.sherdilkhawaja.gamingforecast"
-        minSdkVersion 10
+        minSdkVersion 11
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
-<<<<<<< HEAD
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled = true
 
-=======
->>>>>>> Realbranch
     }
     buildTypes {
         release {
@@ -26,11 +23,11 @@ android {
 }
 
 dependencies {
+    androidTestCompile 'com.android.support.test:runner:0.4'
+    androidTestCompile 'com.android.support.test:rules:0.4'
+    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.1'
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:23.0.1'
-<<<<<<< HEAD
     compile 'com.google.code.gson:gson:2.2.+'
     compile files('libs/gson-2.2.3/gson-2.2.3.jar')
-=======
->>>>>>> Realbranch
 }

@@ -57,7 +57,7 @@
             android:autoLink="web"
             android:cursorVisible="true"
             android:layout_width="100dp"
-            android:id="@+id/button_so"
+            android:id="@+id/buttoner"
             android:text="Youtube"
             android:linksClickable="true"
             android:onClick="goToSu"

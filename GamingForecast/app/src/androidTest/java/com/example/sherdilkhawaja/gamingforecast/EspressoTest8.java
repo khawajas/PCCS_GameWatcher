@@ -34,8 +34,12 @@ public class EspressoTest8 extends ActivityInstrumentationTestCase2<MainActivity
         getActivity();
     }
 
-    public void VideoFailTest() {
+    public void testClickAndCheckDisplayed() {
 
+        onView(withId(R.id.badbutton)).perform(click());
+        assertNotNull(R.id.badbutton);
+
+        //happens when database has wrong url stored.
 
     }
 }

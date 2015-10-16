@@ -34,8 +34,10 @@ public class EspressoTest9 extends ActivityInstrumentationTestCase2<MainActivity
         getActivity();
     }
 
-    public void VideoSuccessTest() {
+    public void testClickAndCheckDisplayed() {
 
+        onView(withId(R.id.buttonXD)).perform(click());
+        assertNotNull(R.id.buttonXD);
 
     }
 }
