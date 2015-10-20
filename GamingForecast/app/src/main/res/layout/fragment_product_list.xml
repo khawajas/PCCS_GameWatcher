@@ -10,8 +10,6 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:gravity="center"
-        android:divider="@color/transparent"
-        android:dividerHeight="10dp"
         android:drawSelectorOnTop="true"
         android:footerDividersEnabled="false"
         android:padding="10dp"

@@ -29,9 +29,9 @@ public class Banner extends MainActivity  {
         setContentView(R.layout.activity_main);
 
         ArrayList<Game> gameList = new ArrayList<Game>();
-        gameList.add(new Game("1","Metal Gear","PS4","10/16/2015"));
-        gameList.add(new Game("2", "Skyrim", "XBox", "11/16/2015"));
-        gameList.add(new Game("3", "Fallout 4", "PC", "10/15/2015"));
+        gameList.add(new Game("1","Metal Gear Solid V: The Phantom Pain","PS4/XB1/PC","10/20/2015"));
+        gameList.add(new Game("2", "Fallout 4", "PS4/XB1/PC", "11/16/2015"));
+        gameList.add(new Game("3", "Star Wars Battlefront", "PS4/XB1/PC", "11/27/2015"));
 
         notification = new NotificationCompat.Builder(this);
         notification.setAutoCancel(true);
