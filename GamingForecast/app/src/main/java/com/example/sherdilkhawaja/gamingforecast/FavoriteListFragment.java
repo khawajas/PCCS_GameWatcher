@@ -1,6 +1,7 @@
 package com.example.sherdilkhawaja.gamingforecast;
 
 import java.util.List;
+import java.util.logging.Handler;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
@@ -64,53 +65,58 @@ public class FavoriteListFragment extends Fragment {
 
                 favoriteList.setOnItemClickListener(new OnItemClickListener() {
 
-                    public void onItemClick(AdapterView<?> parent, View arg1,
-                                            int position, long arg3) {
+                                                        public void onItemClick(AdapterView<?> parent, View arg1,
+                                                                                int position, long arg3) {
 
-                    }
-                });
+                                                            Product product = (Product) parent.getItemAtPosition(position);
+                                                            Toast.makeText(activity, product.toString2(), Toast.LENGTH_LONG).show();
 
-                favoriteList
-                        .setOnItemLongClickListener(new OnItemLongClickListener() {
+                                                        }
+                                                    }
+                                                 );
 
-                            @Override
-                            public boolean onItemLongClick(
-                                    AdapterView<?> parent, View view,
-                                    int position, long id) {
 
-                                ImageView button = (ImageView) view
-                                        .findViewById(R.id.imgbtn_favorite);
+                    favoriteList.setOnItemLongClickListener(new OnItemLongClickListener() {
 
-                                String tag = button.getTag().toString();
-                                if (tag.equalsIgnoreCase("grey")) {
-                                    sharedPreference.addFavorite(activity,
-                                            favorites.get(position));
-                                    Toast.makeText(
-                                            activity,
-                                            activity.getResources().getString(
-                                                    R.string.add_favr),
-                                            Toast.LENGTH_SHORT).show();
+                                                                 @Override
+                                                                   public boolean onItemLongClick(AdapterView<?> parent, View view,
+                                                                                int position, long id) {
 
-                                    button.setTag("red");
-                                    button.setImageResource(R.drawable.heart_red);
-                                } else {
-                                    sharedPreference.removeFavorite(activity,
-                                            favorites.get(position));
-                                    button.setTag("grey");
-                                    button.setImageResource(R.drawable.grey_heart);
-                                    productListAdapter.remove(favorites
-                                            .get(position));
-                                    Toast.makeText(
-                                            activity,
-                                            activity.getResources().getString(
-                                                    R.string.remove_favr),
-                                            Toast.LENGTH_SHORT).show();
-                                }
-                                return true;
-                            }
-                        });
+                                                                            ImageView button = (ImageView) view
+                                                                                    .findViewById(R.id.imgbtn_favorite);
+
+                                                                            String tag = button.getTag().toString();
+                                                                            if (tag.equalsIgnoreCase("grey")) {
+                                                                                sharedPreference.addFavorite(activity,
+                                                                                        favorites.get(position));
+                                                                                Toast.makeText(
+                                                                                        activity,
+                                                                                        activity.getResources().getString(
+                                                                                                R.string.add_favr),
+                                                                                        Toast.LENGTH_SHORT).show();
+
+                                                                                button.setTag("red");
+                                                                                button.setImageResource(R.drawable.heart_red);
+                                                                            } else {
+                                                                                sharedPreference.removeFavorite(activity,
+                                                                                        favorites.get(position));
+                                                                                button.setTag("grey");
+                                                                                button.setImageResource(R.drawable.grey_heart);
+                                                                                productListAdapter.remove(favorites
+                                                                                        .get(position));
+                                                                                Toast.makeText(
+                                                                                        activity,
+                                                                                        activity.getResources().getString(
+                                                                                                R.string.remove_favr),
+                                                                                        Toast.LENGTH_SHORT).show();
+                                                                            }
+                                                                            return true;
+                                                                        }
+                                                                    }
+
+                    );
+                }
             }
-        }
         return view;
     }
 
@@ -128,7 +134,6 @@ public class FavoriteListFragment extends Fragment {
 
                         public void onClick(DialogInterface dialog, int which) {
                             dialog.dismiss();
-                            activity.finish();
                             getFragmentManager().popBackStackImmediate();
                         }
                     });

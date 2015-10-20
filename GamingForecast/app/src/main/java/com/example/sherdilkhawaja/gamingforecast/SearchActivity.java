@@ -6,12 +6,16 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SearchView;
 
+import java.io.Serializable;
+
 /**
- * Created by sherdilkhawaja on 10/15/15.
+ * Created by Pulkit on 10/17/15.
  */
 public class SearchActivity extends MainActivity {
 
@@ -22,8 +26,6 @@ public class SearchActivity extends MainActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.searchable);
         handleIntent(getIntent());
-
-
         // get the action bar
         ActionBar actionBar = getActionBar();
 
@@ -48,7 +50,7 @@ public class SearchActivity extends MainActivity {
             String query = intent.getStringExtra(SearchManager.QUERY);
             doMySearch(query);
 
-            /*
+
             listResults.setAdapter(new ArrayAdapter(this, R.layout.fragment_product_list));
             listResults.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
@@ -58,7 +60,7 @@ public class SearchActivity extends MainActivity {
                     finish();
                 }
             });
-            */
+
         }
     }
 

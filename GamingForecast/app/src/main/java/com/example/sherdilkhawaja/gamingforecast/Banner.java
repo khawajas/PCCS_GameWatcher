@@ -29,9 +29,14 @@ public class Banner extends MainActivity  {
         setContentView(R.layout.activity_main);
 
         ArrayList<Game> gameList = new ArrayList<Game>();
-        gameList.add(new Game("1","Metal Gear","PS4","10/16/2015"));
-        gameList.add(new Game("2", "Skyrim", "XBox", "11/16/2015"));
-        gameList.add(new Game("3", "Fallout 4", "PC", "10/15/2015"));
+        gameList.add(new Game("1", "Bloodborne", "10/20/2015", "PS4", "1"));
+        gameList.add(new Game("2", "Kingdom Hearts III", "10/20/2015", "PS4/XBox 1", "2"));
+        gameList.add(new Game("3", "Final Fantasy XV", "10/21/2015",  "PS4", "3"));
+        gameList.add(new Game("4", "Metal Gear Solid V", "2/25/2015", "PS4", "4"));
+        gameList.add(new Game("5", "Pokemon Rainbow", "7/25/2016", "3DS", "5"));
+        gameList.add(new Game("6", "Call of Duty: Black Ops III", "10/12/2015", "PS4/Xbox 1", "3"));
+        gameList.add(new Game("7", "Destiny: The Taken King", "9/20/2015", "PS4/PC", "2"));
+        gameList.add(new Game("8", "Fallout 4", "11/10/2015", "PS4/Xbox 1/PC", "1"));
 
         notification = new NotificationCompat.Builder(this);
         notification.setAutoCancel(true);
@@ -80,14 +85,15 @@ public class Banner extends MainActivity  {
 
     class Game
     {
-        private String gameID,gameName,gamePlatform,gameDate;
+        private String gameID,gameName,gamePlatform,gameDate,gameRating;
 
-        Game(String inID, String inName, String inPlatform, String inDate)
+        Game(String inID, String inName, String inDate, String inPlatform, String inRating)
         {
             this.gameID = inID;
             this.gameName = inName;
             this.gamePlatform = inPlatform;
             this.gameDate = inDate;
+            this.gameRating = inRating;
         }
 
         public String getGameID()
@@ -113,6 +119,12 @@ public class Banner extends MainActivity  {
 
         public void setGameDate(String inDate)
         { this.gameDate = inDate; }
+
+        public void setGameRating(String inRating)
+        { this.gameRating = inRating; }
+
+        public String getGameRating()
+        { return gameRating; }
     }
 
 }

@@ -14,8 +14,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.SearchView;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends FragmentActivity {
 
@@ -23,7 +21,6 @@ public class MainActivity extends FragmentActivity {
     ProductListFragment pdtListFragment;
     FavoriteListFragment favListFragment;
     PopularListFragment popListFragment;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,8 +39,17 @@ public class MainActivity extends FragmentActivity {
                                     .findFragmentByTag(FavoriteListFragment.ARG_ITEM_ID);
                         }
                     }
+                    if (content.equals(PopularListFragment.ARG_ITEM_ID)) {
+                        if (fragmentManager.findFragmentByTag(PopularListFragment.ARG_ITEM_ID) != null) {
+                            setFragmentTitle(R.string.mostpopular);
+                            contentFragment = fragmentManager
+                                    .findFragmentByTag(PopularListFragment.ARG_ITEM_ID);
+                        }
+                    }
                 }
             }
+
+
             if (fragmentManager.findFragmentByTag(ProductListFragment.ARG_ITEM_ID) != null) {
                 pdtListFragment = (ProductListFragment) fragmentManager
                         .findFragmentByTag(ProductListFragment.ARG_ITEM_ID);
@@ -55,6 +61,7 @@ public class MainActivity extends FragmentActivity {
             pdtListFragment = new ProductListFragment();
             setFragmentTitle(R.string.names);
             switchContent(pdtListFragment, ProductListFragment.ARG_ITEM_ID);
+
         }
 
     }
@@ -63,11 +70,11 @@ public class MainActivity extends FragmentActivity {
         goToUrl("https://www.youtube.com/watch?v=tBGjx-4_R10");
     }
 
-    public void badurl (View view) {
+    public void badurl(View view) {
         goToUrl("https://wwww.youtube.com/idkbadurl");
     }
 
-    private void goToUrl (String url) {
+    private void goToUrl(String url) {
         Uri uriUrl = Uri.parse(url);
         Intent launchBrowser = new Intent(Intent.ACTION_VIEW, uriUrl);
         startActivity(launchBrowser);
@@ -77,7 +84,11 @@ public class MainActivity extends FragmentActivity {
     protected void onSaveInstanceState(Bundle outState) {
         if (contentFragment instanceof FavoriteListFragment) {
             outState.putString("content", FavoriteListFragment.ARG_ITEM_ID);
-        } else {
+        }
+        if (contentFragment instanceof PopularListFragment) {
+            outState.putString("content", PopularListFragment.ARG_ITEM_ID);
+        }
+        if (contentFragment instanceof ProductListFragment) {
             outState.putString("content", ProductListFragment.ARG_ITEM_ID);
         }
         super.onSaveInstanceState(outState);
@@ -88,12 +99,12 @@ public class MainActivity extends FragmentActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
 
-        SearchManager searchManager = (SearchManager) getSystemService( Context.SEARCH_SERVICE );
+        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         SearchView searchView = (SearchView) menu.findItem(R.id.options_menu_main_search).getActionView();
 
         searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
 
-        return super.onCreateOptionsMenu( menu );
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override
@@ -115,8 +126,7 @@ public class MainActivity extends FragmentActivity {
 
     public void switchContent(Fragment fragment, String tag) {
         FragmentManager fragmentManager = getSupportFragmentManager();
-        while (fragmentManager.popBackStackImmediate());
-
+        while (fragmentManager.popBackStackImmediate()) ;
         if (fragment != null) {
             FragmentTransaction transaction = fragmentManager
                     .beginTransaction();
@@ -125,6 +135,7 @@ public class MainActivity extends FragmentActivity {
             if (!(fragment instanceof ProductListFragment)) {
                 transaction.addToBackStack(tag);
             }
+
             transaction.commit();
             contentFragment = fragment;
         }

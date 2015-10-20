@@ -7,19 +7,19 @@ public class Product {
     private String game;
     private String releaseDate;
     private String platform;
-    private int rating;
-
+    private String rating;
 
     public Product() {
         super();
     }
 
-    public Product(int id, String game, String releaseDate, String platform) {
+    public Product(int id, String game, String releaseDate, String platform, String rating) {
         super();
         this.id = id;
         this.game = game;
         this.releaseDate = releaseDate;
         this.platform = platform;
+        this.rating = rating;
     }
 
 
@@ -30,6 +30,7 @@ public class Product {
     public void setId(int id) {
         this.id = id;
     }
+
 
     public String getGame() {
         return game;
@@ -43,9 +44,9 @@ public class Product {
         return releaseDate;
     }
 
-    public int getRating() {return rating; }
+    public String getRating() { return rating; }
 
-    public void setRating(int rating) { this.rating = rating; }
+    public void setRating(String rating) { this.rating = rating; }
 
     public void setReleaseDate(String releaseDate) {
         this.releaseDate = releaseDate;
@@ -86,5 +87,14 @@ public class Product {
     public String toString() {
         return "Game: " + game + "\n" + "Release Date: "
                 + releaseDate + "\n" + "Platform: " + platform + "";
+    }
+
+    public String toString2(){
+        return "No information about the game is currently available!";
+    }
+
+    public String toString3(){
+        return "This game is so popular! Click here to find out why it's trending!";
+
     }
 }

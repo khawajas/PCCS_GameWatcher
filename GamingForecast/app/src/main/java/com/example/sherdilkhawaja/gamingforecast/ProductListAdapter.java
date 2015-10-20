@@ -13,19 +13,15 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.sherdilkhawaja.gamingforecast.R;
-import com.example.sherdilkhawaja.gamingforecast.Product;
-import com.example.sherdilkhawaja.gamingforecast.SharedPreference;
-
 
 public class ProductListAdapter extends ArrayAdapter<Product>{
 
     private Context context;
     List<Product> products;
     SharedPreference sharedPreference;
+    SharedPreferencePopular sharedPreference2;
 
-    private ArrayList gameList;
-    private ArrayList filteredList;
+
 
     public ProductListAdapter (Context context, List<Product> products) {
         super(context, R.layout.product_list_item, products);
@@ -33,7 +29,10 @@ public class ProductListAdapter extends ArrayAdapter<Product>{
         this.products = products;
         getFilter();
         sharedPreference = new SharedPreference();
+        sharedPreference2 = new SharedPreferencePopular();
     }
+
+
 
     private class ViewHolder {
         TextView productGameTxt;
@@ -52,9 +51,12 @@ public class ProductListAdapter extends ArrayAdapter<Product>{
     public Product getItem(int position) {
         return products.get(position);
     }
-
     @Override
     public long getItemId(int position) {
+        return 0;
+    }
+
+    public int getRaters(String position) {
         return 0;
     }
 
@@ -83,12 +85,10 @@ public class ProductListAdapter extends ArrayAdapter<Product>{
         }
         Product product = (Product) getItem(position);
         holder.productGameTxt.setText(product.getGame());
-        // holder.ratingTxt.setText(product.getRating() * R.drawable.heart_red);
-        // holder.productPlatformTxt.setText(product.getPlatform());
-        // holder.productReleaseTxt.setText(product.getReleaseDate());
 
         /*If a product exists in shared preferences then set heart_red drawable
          * and set a tag*/
+
         if (checkFavoriteItem(product)) {
             holder.favoriteImg.setImageResource(R.drawable.heart_red);
             holder.favoriteImg.setTag("red");
@@ -96,8 +96,44 @@ public class ProductListAdapter extends ArrayAdapter<Product>{
             holder.favoriteImg.setImageResource(R.drawable.grey_heart);
             holder.favoriteImg.setTag("grey");
         }
-
         return convertView;
+    }
+
+    public View getView2(int position2, View convertView2, ViewGroup parent2) {
+        ViewHolder holder2 = null;
+        if (convertView2 == null) {
+            LayoutInflater inflater = (LayoutInflater) context
+                    .getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
+            convertView2 = inflater.inflate(R.layout.product_list_item, null);
+            holder2 = new ViewHolder();
+            holder2.productGameTxt = (TextView) convertView2
+                    .findViewById(R.id.txt_pdt_name);
+            holder2.productPlatformTxt = (TextView) convertView2
+                    .findViewById(R.id.txt_pdt_desc);
+            holder2.productReleaseTxt = (TextView) convertView2
+                    .findViewById(R.id.txt_pdt_price);
+            holder2.favoriteImg = (ImageView) convertView2
+                    .findViewById(R.id.imgbtn_favorite);
+            holder2.ratingTxt = (TextView) convertView2
+                    .findViewById(R.id.txt_rating_value);
+
+            convertView2.setTag(holder2);
+        } else {
+            holder2 = (ViewHolder) convertView2.getTag();
+        }
+        Product product = (Product) getItem(position2);
+
+        /*If a product exists in shared preferences 2 set a tag; */
+
+        if (checkPopularItem(product)) {
+            holder2.favoriteImg.setTag("trending");
+            holder2.favoriteImg.setImageResource(R.drawable.popular);
+
+        } else {
+            holder2.favoriteImg.setTag("nottrending");
+            holder2.favoriteImg.setImageResource(R.drawable.popular);
+        }
+        return convertView2;
     }
 
     /*Checks whether a particular product exists in SharedPreferences*/
@@ -115,12 +151,30 @@ public class ProductListAdapter extends ArrayAdapter<Product>{
         return check;
     }
 
+    public boolean checkPopularItem(Product checkProduct2) {
+        boolean check2 = false;
+        List<Product> mostpopular = sharedPreference2.getMostpopular(context);
+        if (mostpopular != null) {
+            for (Product product : mostpopular) {
+                if (product.equals(mostpopular)) {
+                    check2 = true;
+                    break;
+                }
+            }
+        }
+        return check2;
+    }
+
+
+
+
     @Override
     public void add(Product product) {
         super.add(product);
         products.add(product);
         notifyDataSetChanged();
     }
+
 
     @Override
     public void remove(Product product) {
