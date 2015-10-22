@@ -31,3 +31,9 @@ dependencies {
     compile 'com.google.code.gson:gson:2.2.+'
     compile files('libs/gson-2.2.3/gson-2.2.3.jar')
 }
+
+dependencies {
+    compile 'com.parse.bolts:bolts-android:1.+'
+    compile 'com.parse:parse-android:1.+'
+}
+

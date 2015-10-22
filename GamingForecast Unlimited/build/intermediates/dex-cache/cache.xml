@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\topay\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.2.4\a60a5e993c98c864010053cb901b7eab25306568\gson-2.2.4.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="a60a5e993c98c864010053cb901b7eab25306568">
+        <dex dex="C:\Users\topay\Documents\PCCS-app_project_355\GamingForecast\app\build\intermediates\pre-dexed\debug\gson-2.2.4-8d306cd602fc743f4daa3ae3479aa8bad0ee6785.jar" />
+    </item>
+    <item
+        jar="C:\Users\topay\Documents\PCCS-app_project_355\GamingForecast\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\libs\internal_impl-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
+        <dex dex="C:\Users\topay\Documents\PCCS-app_project_355\GamingForecast\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.1-4f2fb9573fa6dc2764b6036af6b43bc953b3e849.jar" />
+    </item>
+    <item
+        jar="C:\Users\topay\Documents\PCCS-app_project_355\GamingForecast\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="C:\Users\topay\Documents\PCCS-app_project_355\GamingForecast\app\build\intermediates\pre-dexed\debug\classes-825989b90651c5d66620154c296706ee3c0e9942.jar" />
+    </item>
+    <item
+        jar="C:\Users\topay\Documents\PCCS-app_project_355\GamingForecast\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
+        <dex dex="C:\Users\topay\Documents\PCCS-app_project_355\GamingForecast\app\build\intermediates\pre-dexed\debug\classes-df2035bb3297ab044cb39e1807d98c0ef32e0ff7.jar" />
+    </item>
+    <item
+        jar="C:\Users\topay\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.0.1\support-annotations-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
+        <dex dex="C:\Users\topay\Documents\PCCS-app_project_355\GamingForecast\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.1-8a9c245f4cd9a5dc68ceb3c31d7792959dfaa617.jar" />
+    </item>
+
+</items>

@@ -1,0 +1,17 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+
+    <FrameLayout
+        android:id="@+id/content_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen"
+
+    />
+
+
+</RelativeLayout>
+<!-- From: file:/C:/Users/topay/Documents/PCCS-app_project_355/GamingForecast/app/src/main/res/layout/activity_main.xml -->

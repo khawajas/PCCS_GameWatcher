@@ -14,6 +14,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.SearchView;
 
+import com.parse.Parse;
+import com.parse.ParseObject;
+
 
 public class MainActivity extends FragmentActivity {
 
@@ -24,6 +27,16 @@ public class MainActivity extends FragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // Enable Local Datastore.
+        Parse.enableLocalDatastore(this);
+
+        Parse.initialize(this, "yzigYh8NZ1K6ZoaFA5FBNSvettcUeJDFmVD9MMDS", "sFNQiFF2xnl4sIrqv0oYdIJi48GXkBRff4IzubGM");
+
+        ParseObject testObject = new ParseObject("TestObject");
+        testObject.put("foo", "bar");
+        testObject.saveInBackground();
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         FragmentManager fragmentManager = getSupportFragmentManager();
