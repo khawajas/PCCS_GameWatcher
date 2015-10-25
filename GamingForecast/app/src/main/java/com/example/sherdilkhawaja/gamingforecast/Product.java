@@ -97,4 +97,5 @@ public class Product {
         return "This game is so popular! Click here to find out why it's trending!";
 
     }
+
 }

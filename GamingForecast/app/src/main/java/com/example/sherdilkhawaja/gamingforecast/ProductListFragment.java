@@ -6,17 +6,20 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemLongClickListener;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
-
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class ProductListFragment extends Fragment implements
@@ -29,6 +32,11 @@ public class ProductListFragment extends Fragment implements
     List<Product> products;
     ProductListAdapter productListAdapter;
 
+    //result of the search
+    ArrayList listItems = new ArrayList<>(Collections.singletonList(String.valueOf(products)));
+    //to search
+    EditText editText;
+
     SharedPreference sharedPreference;
     SharedPreferencePopular sharedPreference2;
 
@@ -38,6 +46,44 @@ public class ProductListFragment extends Fragment implements
         activity = getActivity();
         sharedPreference = new SharedPreference();
         sharedPreference2 = new SharedPreferencePopular();
+
+        setProducts();}
+
+        //editText = (EditText)getActivity().findViewById(R.id.txt_search);
+
+        //what happens before, during, and after text is changed for search
+        /*editText.addTextChangedListener(new TextWatcher() {
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(s.toString().equals(""))
+                {
+                    setProducts();
+                }
+                else
+                {
+                    searchItem(s.toString());
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+    }*/
+
+    //the process of searching an item
+    public void searchItem (String textToSearch) {
+        for (Product item: products)
+            if(!listItems.contains(textToSearch)){
+                listItems.remove(item);
+            }
+        productListAdapter.notifyDataSetChanged();
     }
 
     @Nullable
@@ -47,8 +93,10 @@ public class ProductListFragment extends Fragment implements
     {
         View view = inflater.inflate(R.layout.fragment_product_list, container,
                 false);
+        //View view2 = inflater.inflate(R.layout.searchable, container, false);
 
         findViewsById(view);
+        //findViewsById(view2);
 
         setProducts();
 
@@ -71,7 +119,7 @@ public class ProductListFragment extends Fragment implements
         Product product8 = new Product(8, "Fallout 4", "11/10/2015", "PS4/Xbox 1/PC", "1");
 
 
-        products = new ArrayList<Product>();
+        products = new ArrayList<>();
         products.add(product1);
         products.add(product2);
         products.add(product3);
@@ -85,6 +133,7 @@ public class ProductListFragment extends Fragment implements
 
     private void findViewsById(View view) {
         productListView = (ListView) view.findViewById(R.id.list_product);
+        editText = (EditText)view.findViewById(R.id.txt_search);
     }
 
     @Override
@@ -124,8 +173,14 @@ public class ProductListFragment extends Fragment implements
     @Override
     public void onResume() {
         getActivity().setTitle(R.string.names);
-        getActivity().getActionBar().setTitle(R.string.names);
+        //getActivity().getActionBar().setTitle(R.string.names);
         super.onResume();
+    }
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState){
+        super.onActivityCreated(savedInstanceState);
+        editText = (EditText)getActivity().findViewById(R.id.txt_search);
     }
 }
 

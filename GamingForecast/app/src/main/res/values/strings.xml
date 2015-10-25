@@ -6,4 +6,5 @@
     <string name="hint">Search for Game</string>
     <string name="label">Search</string>
     <string name="mostpopular">Most Popular</string>
+    <string name="Search">Search</string>
 </resources>

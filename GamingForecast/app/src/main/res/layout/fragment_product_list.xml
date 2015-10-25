@@ -5,6 +5,14 @@
     android:background="@mipmap/triforce"
     android:gravity="center">
 
+    <EditText
+        android:id="@+id/txt_search"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/Search"
+        android:inputType="text"
+        android:editable="true" />
+
     <ListView
         android:id="@+id/list_product"
         android:layout_width="fill_parent"
@@ -15,8 +23,10 @@
         android:drawSelectorOnTop="true"
         android:footerDividersEnabled="false"
         android:padding="5dp"
-        android:scrollbarStyle="outsideOverlay" >
+        android:scrollbarStyle="outsideOverlay"
+        android:layout_below="@+id/txt_search">
     </ListView>
+
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="horizontal"
