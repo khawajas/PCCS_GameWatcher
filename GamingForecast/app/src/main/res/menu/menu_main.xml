@@ -1,0 +1,50 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
+
+    <item
+        android:id="@+id/menu_favorites"
+        android:icon="@drawable/heart_red"
+        android:orderInCategory="200"
+        app:showAsAction="ifRoom|withText"
+        android:title="@string/favorites"/>
+
+    <item
+        android:id="@+id/options_menu_main_search"
+        android:actionViewClass="android.widget.SearchView"
+        android:icon="@drawable/ic_search"
+        android:showAsAction="always"
+        android:title="Search"
+        app:actionViewClass="android.support.v7.widget.SearchView"
+        app:showAsAction="ifRoom|collapseActionView" />
+        app:ignore="AppCompatResource"/>
+
+    <item
+        android:id="@+id/most_popular"
+        android:icon="@drawable/heart_red"
+        android:orderInCategory="199"
+        app:showAsAction="ifRoom|withText"
+        android:title="@string/mostpopular"/>
+
+    <item
+        android:id="@+id/search"
+        android:icon="@drawable/heart_red"
+        android:orderInCategory="199"
+        app:showAsAction="ifRoom|withText"
+        android:title="@string/label"/>
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" />
+
+
+    <FrameLayout
+        android:id="@+id/displayList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+    </FrameLayout>
+
+
+</menu>
