@@ -9,10 +9,10 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.MenuItemCompat;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.SearchView;
 
 
@@ -24,6 +24,7 @@ public class MainActivity extends FragmentActivity {
     PopularListFragment popListFragment;
     SearchListFragment searchListFragment;
 
+    Button btn;
 
         @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,9 +36,9 @@ public class MainActivity extends FragmentActivity {
             if (savedInstanceState.containsKey("content")) {
                 String content = savedInstanceState.getString("content");
                 if (content != null) {
-                    if (content.equals(PopularListFragment.ARG_ITEM_ID)) {
+                    if (content.equals(SearchListFragment.ARG_ITEM_ID)) {
                         if (fragmentManager.findFragmentByTag(SearchListFragment.ARG_ITEM_ID) != null) {
-                            setFragmentTitle(R.string.label);
+                            setFragmentTitle(R.string.search);
                             contentFragment = fragmentManager
                                     .findFragmentByTag(SearchListFragment.ARG_ITEM_ID);
                         }
@@ -77,6 +78,10 @@ public class MainActivity extends FragmentActivity {
 
     }
 
+    public void buttonsearch(View view) {
+        goToUrl("https://www.youtube.com/watch?v=tBGjx-4_R10");
+    }
+
     public void goToYou(View view) {
         goToUrl("https://www.youtube.com/watch?v=tBGjx-4_R10");
     }
@@ -113,8 +118,8 @@ public class MainActivity extends FragmentActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-        SearchView searchView = (SearchView) menu.findItem(R.id.options_menu_main_search).getActionView();
-        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+  //      SearchView searchView = (SearchView) menu.findItem(R.id.options_menu_main_search).getActionView();
+  //      searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -132,7 +137,7 @@ public class MainActivity extends FragmentActivity {
                 switchContent(popListFragment, PopularListFragment.ARG_ITEM_ID);
                 return true;
             case R.id.search:
-                setFragmentTitle(R.string.label);
+                setFragmentTitle(R.string.search);
                 searchListFragment = new SearchListFragment();
                 switchContent(searchListFragment, SearchListFragment.ARG_ITEM_ID);
                 return true;

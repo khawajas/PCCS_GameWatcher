@@ -1,57 +1,66 @@
 package com.example.sherdilkhawaja.gamingforecast;
 
-import java.util.List;
-import java.util.logging.Handler;
+import java.util.ArrayList;
 
-import android.annotation.TargetApi;
-import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.os.Build;
+import android.app.DialogFragment;
+import android.app.ListFragment;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.view.GestureDetector;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
-import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ImageView;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.SearchView;
+import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.SearchView.OnQueryTextListener;
+
+
 
 
 public class SearchListFragment extends Fragment {
+
+    View games;
+    public SearchView search;
+    public ListView lv;
+
     public static final String ARG_ITEM_ID = "Search list";
-    ArrayAdapter<String> adapter;
-    String[] games={"Pokemon", "Naruto"};
 
-    Activity activity;
-
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView=inflater.inflate(R.layout.fragment_search, null);
-
-        getActivity().setTitle("Search");
-
-        adapter = new ArrayAdapter<String>(getActivity(), R.layout.searchable);
-
-        return rootView;
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
     }
 
-
-
-    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     @Override
-    public void onResume() {
-        getActivity().setTitle(R.string.label);
-        getActivity().getActionBar().setTitle(R.string.label);
-        super.onResume();
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+
+        ViewGroup rootView = (ViewGroup) inflater
+                .inflate(R.layout.fragment_search, container, false);
+
+        setHasOptionsMenu(true);
+
+        ListView phoneListView = ((ListView) rootView.findViewById(R.id.games));
+
+        ArrayList<String> gameList = new ArrayList<String>();
+        gameList.add("Bloodborne: The Old Hunters");
+        gameList.add("Kingdom Hearts III");
+        gameList.add("Final Fantasy XV");
+
+        ArrayAdapter<String> arrayAdapter =
+                new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, gameList);
+        // Set The Adapter
+        phoneListView.setAdapter(arrayAdapter);
+        return rootView;
+
+
     }
 }
 

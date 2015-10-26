@@ -34,7 +34,7 @@ public class Banner extends MainActivity  {
         setContentView(R.layout.activity_main);
 
         ArrayList<Product> gameList = new ArrayList<Product>();
-        gameList.add(new Product(1, "Bloodborne: The Old Hunters", "10/24/2015", "PS4", "1"));
+        gameList.add(new Product(1, "Bloodborne: The Old Hunters", "10/26/2015", "PS4", "1"));
         gameList.add(new Product(2, "Kingdom Hearts III", "10/20/2015", "PS4/XBox 1", "2"));
         gameList.add(new Product(3, "Final Fantasy XV", "2/25/2015", "PS4", "3"));
         gameList.add(new Product(4, "Metal Gear Solid V", "2/25/2015", "PS4", "4"));

@@ -69,7 +69,7 @@ public class ProductListFragment extends Fragment implements
 
             products = new ArrayList<Product>();
 
-            products.add(new Product(1, "Bloodborne: The Old Hunters", "10/24/2015", "PS4", "1"));
+            products.add(new Product(1, "Bloodborne: The Old Hunters", "10/26/2015", "PS4", "1"));
             products.add(new Product(2, "Kingdom Hearts III", "10/20/2015", "PS4/XBox 1", "2"));
             products.add(new Product(3, "Final Fantasy XV", "2/25/2015", "PS4", "3"));
             products.add(new Product(4, "Metal Gear Solid V", "2/25/2015", "PS4", "4"));
@@ -121,30 +121,6 @@ public class ProductListFragment extends Fragment implements
             }
             return true;
         }
-
-//
-//    @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
-//    @Override
-//    public void onCreateOptionsMenu (Menu menu, MenuInflater inflater){
-//        inflater.inflate(R.menu.menu_main, menu);
-//        MenuItem item = menu.findItem(R.id.action_search);
-//        SearchView sv = new SearchView(((MainActivity) getActivity()).getActionBar().getThemedContext());
-//        MenuItemCompat.setShowAsAction(item, MenuItemCompat.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW | MenuItemCompat.SHOW_AS_ACTION_IF_ROOM);
-//        MenuItemCompat.setActionView(item, sv);
-//        sv.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-//            @Override
-//            public boolean onQueryTextSubmit(String query) {
-//                System.out.println("Hello");
-//                return false;
-//            }
-//
-//            @Override
-//            public boolean onQueryTextChange(String newText) {
-//                System.out.println("tap");
-//                return false;
-//            }
-//        });
-//    }
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     @Override

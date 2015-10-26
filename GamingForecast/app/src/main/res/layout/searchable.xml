@@ -2,7 +2,7 @@
 <searchable
     xmlns:andriod="http://schemas.android.com/apk/res/android"
     xmlns:android="http://schemas.android.com/tools"
-    android:label="search"
+    android:label="Search"
     android:id="@+id/searchable"
     andriod:hint="Search Game"
     andriod:layout_height="35dp"
