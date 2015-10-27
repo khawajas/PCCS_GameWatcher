@@ -19,11 +19,6 @@
                 <action android:name="android.intent.action.SEARCH" />/>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-            <meta-data
-                android:name="android.app.searchable"
-                android:resource="@layout/searchable">
-            </meta-data>
         </activity>
         <activity android:name="com.example.sherdilkhawaja.gamingforecast.Banner" >
         </activity>

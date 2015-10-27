@@ -117,9 +117,6 @@ public class MainActivity extends FragmentActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
-        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-  //      SearchView searchView = (SearchView) menu.findItem(R.id.options_menu_main_search).getActionView();
-  //      searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -137,7 +134,7 @@ public class MainActivity extends FragmentActivity {
                 switchContent(popListFragment, PopularListFragment.ARG_ITEM_ID);
                 return true;
             case R.id.search:
-                setFragmentTitle(R.string.search);
+                setFragmentTitle(R.string.searchforgame);
                 searchListFragment = new SearchListFragment();
                 switchContent(searchListFragment, SearchListFragment.ARG_ITEM_ID);
                 return true;

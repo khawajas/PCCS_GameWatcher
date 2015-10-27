@@ -15,22 +15,26 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemLongClickListener;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class ProductListFragment extends Fragment implements
-        OnItemClickListener, OnItemLongClickListener  {
+        OnItemClickListener, OnItemLongClickListener, SearchView.OnQueryTextListener  {
 
     public static final String ARG_ITEM_ID = "Product_list";
 
     Activity activity;
     ListView productListView;
     public static ArrayList<Product> products;
+    ArrayList<String> gamers;
     ProductListAdapter productListAdapter;
     SharedPreference sharedPreference;
+    ArrayAdapter<String> adapter;
 
     ListView lv;
     SearchView search_view;
@@ -59,6 +63,16 @@ public class ProductListFragment extends Fragment implements
         productListView.setAdapter(productListAdapter);
         productListView.setOnItemClickListener(this);
         productListView.setOnItemLongClickListener(this);
+
+        lv = (ListView) view.findViewById(R.id.list_product);
+        search_view = (SearchView) view.findViewById(R.id.search_view);
+
+        gamers = new ArrayList<String>();
+
+        adapter = new ArrayAdapter<String>(getActivity(),
+                R.layout.list_items, R.id.txt_pdt_name, gamers);
+
+        lv.setAdapter(adapter);
 
         return view;
     }
@@ -127,6 +141,17 @@ public class ProductListFragment extends Fragment implements
         getActivity().setTitle(R.string.names);
         getActivity().getActionBar().setTitle(R.string.names);
         super.onResume();
+    }
+
+    @Override
+    public boolean onQueryTextChange(String newText) {
+        adapter.getFilter().filter(newText);
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        return false;
     }
 }
 

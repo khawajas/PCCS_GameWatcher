@@ -1,36 +1,34 @@
 package com.example.sherdilkhawaja.gamingforecast;
 
+import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Locale;
 
-import android.app.DialogFragment;
-import android.app.ListFragment;
-import android.os.AsyncTask;
+
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
+
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SearchView;
-import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.SearchView.OnQueryTextListener;
 
 
+public class SearchListFragment extends Fragment implements SearchView.OnQueryTextListener {
 
-
-public class SearchListFragment extends Fragment {
-
-    View games;
-    public SearchView search;
-    public ListView lv;
+    ListView lv;
+    SearchView search_view;
+    ArrayList<String> gamers;
+    ArrayAdapter<String> adapter;
+    public ArrayList<Product> products;
 
     public static final String ARG_ITEM_ID = "Search list";
 
@@ -38,29 +36,50 @@ public class SearchListFragment extends Fragment {
         super.onCreate(savedInstanceState);
     }
 
-    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         ViewGroup rootView = (ViewGroup) inflater
                 .inflate(R.layout.fragment_search, container, false);
 
-        setHasOptionsMenu(true);
 
-        ListView phoneListView = ((ListView) rootView.findViewById(R.id.games));
+        lv = (ListView) rootView.findViewById(R.id.list_view);
+        search_view = (SearchView) rootView.findViewById(R.id.search_view);
 
-        ArrayList<String> gameList = new ArrayList<String>();
-        gameList.add("Bloodborne: The Old Hunters");
-        gameList.add("Kingdom Hearts III");
-        gameList.add("Final Fantasy XV");
 
-        ArrayAdapter<String> arrayAdapter =
-                new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, gameList);
-        // Set The Adapter
-        phoneListView.setAdapter(arrayAdapter);
+        String[] games = {"Bloodborne: The Old Hunters","Pokemon Rainbow","Metal Gear solid V: The Phantom Pain", "Final Fantasy XV", "The Witcher 3: The Wild Hunt", "Uncharted 4", "Fallout 4", "No Man's Sky",
+                "Destiny: The Taken King", "Call Of Duty: Black Ops 3", "Kingdom Hearts III", "Persona V", "Xenoblade Chronicles X", "Half Life 3", "Pacman", "The Legend of Zelda: Twilight Princess", "League of Legends",
+                "Madden 2016", "NBA 2k16", "Digimon", "Yugioh", "Splatoon", "Star Wars Battlefront", "Rise Of The Tomb Raider", "Need For Speed", "WWE 2k16", "Assassin's Creed Syndicate", "Watchdogs", "Halo 4",
+                "Overwatch", "Street Fighter V"};
+
+        gamers = new ArrayList<String>();
+
+        for (String gameList : games) {
+            Locale obj = new Locale("", gameList);
+            gamers.add(obj.getDisplayCountry());
+        }
+
+        adapter = new ArrayAdapter<String>(getActivity(),
+                R.layout.list_items, R.id.name, gamers);
+
+        lv.setAdapter(adapter);
+        search_view.setOnQueryTextListener(this);
+
         return rootView;
 
+    }
 
+    @Override
+    public boolean onQueryTextChange(String newText) {
+        adapter.getFilter().filter(newText);
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        return false;
     }
 }
+
+
 

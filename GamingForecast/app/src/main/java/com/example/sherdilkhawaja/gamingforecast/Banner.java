@@ -73,7 +73,7 @@ public class Banner extends MainActivity  {
     public void sendNotification(String Name) {
 
         //Build the notification
-        notification.setSmallIcon(R.drawable.heart_red);
+        notification.setSmallIcon(R.drawable.popular);
         notification.setTicker("New Release!");
         notification.setWhen(System.currentTimeMillis());
         notification.setContentTitle("A new game was released: ");
