@@ -9,7 +9,7 @@ import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import android.app.ListActivity;
 import android.test.ActivityInstrumentationTestCase2;
 
-//Scnenario: Click/Swipe the interactive favorite list screen [Happy Path] for Interactive Home Screen/Favorites Screen [IT 1]
+//Scnenario: Click/Swipe the Interactive Favorite List Screen [Happy Path] for Interactive Home Screen/Favorites Screen [IT 1]
 
 public class EspressoTest2 extends ActivityInstrumentationTestCase2<MainActivity> {
 
