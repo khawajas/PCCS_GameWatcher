@@ -29,5 +29,30 @@
         android:layout_marginLeft="1dp"
         android:layout_marginStart="1dp">
 
+        <Button android:layout_height="1dp"
+            android:clickable="true"
+            android:autoLink="web"
+            android:cursorVisible="true"
+            android:layout_width="1dp"
+            android:id="@+id/BadButton"
+            android:text="Youtube"
+            android:linksClickable="true"
+            android:onClick="badurl"
+            android:layout_below="@+id/linearLayout"
+            android:layout_alignLeft="@+id/linearLayout"
+            android:layout_alignStart="@+id/linearLayout"></Button>
+
+        <Button android:layout_height="1dp"
+            android:clickable="true"
+            android:autoLink="web"
+            android:cursorVisible="true"
+            android:layout_width="1dp"
+            android:id="@+id/YoutubePlayer"
+            android:text="Youtube"
+            android:linksClickable="true"
+            android:onClick="YoutubePlayer"
+            android:layout_alignParentTop="true"></Button>
+
     </LinearLayout>
+
 </RelativeLayout>

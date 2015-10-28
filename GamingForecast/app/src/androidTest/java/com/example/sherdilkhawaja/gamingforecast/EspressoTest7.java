@@ -28,10 +28,10 @@ import org.hamcrest.Matchers;
 
 //Scnenario: View Trailer [Happy Path] for Add Video Preview [IT 1]
 
-public class EspressoTest7 extends ActivityInstrumentationTestCase2<MainActivity> {
+public class EspressoTest7 extends ActivityInstrumentationTestCase2<Banner> {
 
     public EspressoTest7() {
-        super(MainActivity.class);
+        super(Banner.class);
     }
 
     public void setUp() throws Exception {
@@ -41,7 +41,9 @@ public class EspressoTest7 extends ActivityInstrumentationTestCase2<MainActivity
 
     public void testClickAndCheckDisplayed() {
 
-        onView(withId(R.id.YoutubeButton)).perform(click());
+        onView(withId(R.id.YoutubePlayer)).perform(click());
+
+        //sleep while youtube loads to prove the test works before asserting
 
         try {
             Thread.sleep(2500);
@@ -49,7 +51,7 @@ public class EspressoTest7 extends ActivityInstrumentationTestCase2<MainActivity
             e.printStackTrace();
         }
 
-        assertNotNull(R.id.YoutubeButton);
+        assertNotNull(R.id.YoutubePlayer);
 
     }
 }

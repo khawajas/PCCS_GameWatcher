@@ -79,11 +79,16 @@ public class MainActivity extends FragmentActivity {
 
     }
 
-    public void YoutubeButton(View view) {
+    public void YoutubeButton(View view)
+    {
         goToUrl("https://www.youtube.com/watch?v=tBGjx-4_R10");
     }
-
-    public void badurl(View view) {
+    public void YoutubePlayer(View view)
+    {
+        goToUrl("https://www.youtube.com/watch?v=tBGjx-4_R10");
+    }
+    public void badurl(View view)
+    {
         goToUrl("https://wwww.youtube.com/idkbadurl");
     }
 

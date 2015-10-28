@@ -36,7 +36,16 @@ public class EspressoTest8 extends ActivityInstrumentationTestCase2<MainActivity
 
     public void testClickAndCheckDisplayed() {
 
-        //happens when database has wrong url stored.
+        onView(withId(R.id.BadButton)).perform(click());
+
+
+        try {
+            Thread.sleep(2500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        assertNotNull(R.id.BadButton);
 
     }
 }
