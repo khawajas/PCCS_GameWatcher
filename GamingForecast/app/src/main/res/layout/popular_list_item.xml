@@ -12,6 +12,7 @@
         android:layout_height="40dp" >
 
         <TextView
+            android:textAllCaps="false"
             android:id="@+id/popular_name"
             android:layout_width="wrap_content"
             android:gravity="center"
@@ -58,7 +59,7 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="0dp"
         android:layout_below="@+id/pdt_layout_item"
         android:background="@color/view_divider_color"
         android:id="@+id/views" />

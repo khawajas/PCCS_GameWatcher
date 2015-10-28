@@ -8,12 +8,14 @@
     tools:context=".MainActivity" >
 
     <FrameLayout
+        android:textAllCaps="false"
         android:id="@+id/content_frame"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:theme="@android:style/Theme.Holo.Light.Panel" />
 
     <ListView
+        android:textAllCaps="false"
         android:id="@+id/list_view"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" />

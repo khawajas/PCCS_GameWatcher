@@ -12,6 +12,7 @@
         android:layout_height="67dp" >
 
         <TextView
+            android:textAllCaps="false"
             android:id="@+id/txt_pdt_name"
             android:layout_width="wrap_content"
             android:gravity="center"
@@ -19,6 +20,7 @@
             android:layout_height="wrap_content"
             android:padding="6dp" />
         <TextView
+            android:textAllCaps="false"
             android:id="@+id/txt_rating_value"
             android:layout_width="wrap_content"
             android:gravity="center"

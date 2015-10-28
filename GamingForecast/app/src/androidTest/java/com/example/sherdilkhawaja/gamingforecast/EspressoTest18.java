@@ -28,7 +28,8 @@ public class EspressoTest18 extends ActivityInstrumentationTestCase2<Banner> {
 
     public void testClickAndCheckDisplayed() {
 
-
+        //I'm not sure, how to do when we have no R.id for android.. can espresso even do that?
+        //Have to open notification view somehow...
         //todo
 
     }
