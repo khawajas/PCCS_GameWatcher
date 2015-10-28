@@ -26,7 +26,7 @@ import android.test.ActivityInstrumentationTestCase2;
 
 import org.hamcrest.Matchers;
 
-//Scnenario: Video Sort [Happy Path] for Add Video Preview [IT 1]
+//Scnenario: View Trailer [Happy Path] for Add Video Preview [IT 1]
 
 public class EspressoTest7 extends ActivityInstrumentationTestCase2<MainActivity> {
 
