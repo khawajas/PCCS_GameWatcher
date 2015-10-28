@@ -4,7 +4,6 @@
 
     <item
         android:id="@+id/menu_favorites"
-        android:icon="@drawable/heart_red"
         android:orderInCategory="200"
         app:showAsAction="ifRoom|withText"
         android:title="@string/favorites"/>
@@ -12,14 +11,12 @@
 
     <item
         android:id="@+id/most_popular"
-        android:icon="@drawable/heart_red"
         android:orderInCategory="199"
         app:showAsAction="ifRoom|withText"
         android:title="@string/mostpopular"/>
 
     <item
         android:id="@+id/search"
-        android:icon="@drawable/heart_red"
         android:orderInCategory="199"
         app:showAsAction="ifRoom|withText"
         android:title="@string/search"/>

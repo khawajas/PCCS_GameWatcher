@@ -31,6 +31,7 @@ public class ProductListFragment extends Fragment implements
     public static ArrayList<Product> products;
     ProductListAdapter productListAdapter;
     SharedPreference sharedPreference;
+    SharedPreferencePopular sharedPreferencePopular;
 
     ListView lv;
     SearchView search_view;
@@ -41,6 +42,7 @@ public class ProductListFragment extends Fragment implements
         super.onCreate(savedInstanceState);
         activity = getActivity();
         sharedPreference = new SharedPreference();
+        sharedPreferencePopular = new SharedPreferencePopular();
     }
 
     @Nullable
@@ -111,6 +113,7 @@ public class ProductListFragment extends Fragment implements
         }
         else {
             sharedPreference.removeFavorite(activity, products.get(position));
+            sharedPreferencePopular.removeMostpopular(activity, products.get(position));
             button.setTag("grey");
             button.setImageResource(R.drawable.grey_heart);
             Toast.makeText(activity, activity.getResources().getString(R.string.remove_favr),
@@ -119,6 +122,7 @@ public class ProductListFragment extends Fragment implements
             }
             return true;
         }
+
 
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)

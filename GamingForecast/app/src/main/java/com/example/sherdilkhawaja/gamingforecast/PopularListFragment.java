@@ -29,11 +29,12 @@ public class PopularListFragment extends Fragment {
 
 
     ListView popularList;
+    SharedPreference sharedPreference;
     SharedPreferencePopular sharedPreference2;
     List<Product> mostpopular;
 
     Activity activity;
-    ProductListAdapter popularListAdapter2;
+    ProductListAdapterTwo popularListAdapter;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -53,6 +54,9 @@ public class PopularListFragment extends Fragment {
 
         popularList = (ListView) view.findViewById(R.id.list_product);
 
+        mostpopular.add(new Product(1, "Bloodborne: The Old Hunters", "10/26/2015", "PS4", "1"));
+        mostpopular.add(new Product(2, "Kingdom Hearts III", "10/20/2015", "PS4/XBox 1", "2"));
+
         if (mostpopular == null) {
             showAlert(getResources().getString(R.string.nothing_pop),
                     getResources().getString(R.string.comeback));
@@ -66,8 +70,8 @@ public class PopularListFragment extends Fragment {
 
             popularList = (ListView) view.findViewById(R.id.list_product);
             if (mostpopular != null) {
-                popularListAdapter2 = new ProductListAdapter(activity, mostpopular);
-                popularList.setAdapter(popularListAdapter2);
+                popularListAdapter = new ProductListAdapterTwo(activity, mostpopular);
+                popularList.setAdapter(popularListAdapter);
 
                 popularList.setOnItemClickListener(new OnItemClickListener() {
 
@@ -79,47 +83,6 @@ public class PopularListFragment extends Fragment {
 
                                                         }
                                                     }
-                );
-
-
-                popularList.setOnItemLongClickListener(new OnItemLongClickListener() {
-
-                                                            @Override
-                                                            public boolean onItemLongClick(AdapterView<?> parent, View view,
-                                                                                           int position, long id) {
-
-                                                                ImageView button = (ImageView) view
-                                                                        .findViewById(R.id.imgbtn_favorite);
-
-                                                                String tag2 = button.getTag().toString();
-                                                                if (tag2.equalsIgnoreCase("nottrending")) {
-                                                                    sharedPreference2.addMostpopular(activity,
-                                                                            mostpopular.get(position));
-                                                                    Toast.makeText(
-                                                                            activity,
-                                                                            activity.getResources().getString(
-                                                                                    R.string.add_pop),
-                                                                            Toast.LENGTH_SHORT).show();
-
-                                                                    button.setTag("trending");
-                                                                    button.setImageResource(R.drawable.popular);
-                                                                } else {
-                                                                    sharedPreference2.removeMostpopular(activity,
-                                                                            mostpopular.get(position));
-                                                                    button.setTag("nottrending");
-                                                                    button.setImageResource(R.drawable.popular);
-                                                                    popularListAdapter2.remove(mostpopular
-                                                                            .get(position));
-                                                                    Toast.makeText(
-                                                                            activity,
-                                                                            activity.getResources().getString(
-                                                                                    R.string.remove_pop),
-                                                                            Toast.LENGTH_SHORT).show();
-                                                                }
-                                                                return true;
-                                                            }
-                                                        }
-
                 );
             }
         }

@@ -5,12 +5,6 @@
     android:background="#80000000"
     android:gravity="center">
 
-    <SearchView
-        android:id="@+id/search_viewer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:iconifiedByDefault="false"
-        android:queryHint="Search..."/>
 
     <ListView
         android:id="@+id/list_product"
@@ -21,10 +15,8 @@
         android:dividerHeight="6dp"
         android:drawSelectorOnTop="true"
         android:footerDividersEnabled="false"
-        android:layout_below="@id/search_viewer"
         android:padding="5dp"
-        android:scrollbarStyle="outsideOverlay" >
-    </ListView>
+        android:scrollbarStyle="outsideOverlay" />
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="horizontal"

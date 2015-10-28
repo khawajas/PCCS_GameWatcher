@@ -1,6 +1,6 @@
 package com.example.sherdilkhawaja.gamingforecast;
 
-//This is the custom class which displays product name, description, price and favorites
+//This is the custom class which displays product name, description, price and populars
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -17,7 +17,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
-public class ProductListAdapter extends ArrayAdapter<Product>{
+public class ProductListAdapterTwo extends ArrayAdapter<Product>{
 
     private Context context;
     List<Product> products;
@@ -25,8 +25,8 @@ public class ProductListAdapter extends ArrayAdapter<Product>{
     SharedPreferencePopular sharedPreference2;
 
 
-    public ProductListAdapter (Context context, List<Product> products) {
-        super(context, R.layout.product_list_item, products);
+    public ProductListAdapterTwo (Context context, List<Product> products) {
+        super(context, R.layout.popular_list_item, products);
         this.context = context;
         this.products = products;
         getFilter();
@@ -78,7 +78,7 @@ public class ProductListAdapter extends ArrayAdapter<Product>{
         TextView productGameTxt;
         TextView productReleaseTxt;
         TextView productPlatformTxt;
-        ImageView favoriteImg;
+        ImageView popularImg;
         TextView ratingTxt;
     }
 
@@ -111,7 +111,7 @@ public class ProductListAdapter extends ArrayAdapter<Product>{
         if (convertView == null) {
             LayoutInflater inflater = (LayoutInflater) context
                     .getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
-            convertView = inflater.inflate(R.layout.product_list_item, null);
+            convertView = inflater.inflate(R.layout.popular_list_item, null);
             holder = new ViewHolder();
             holder.productGameTxt = (TextView) convertView
                     .findViewById(R.id.txt_pdt_name);
@@ -119,8 +119,8 @@ public class ProductListAdapter extends ArrayAdapter<Product>{
                     .findViewById(R.id.txt_pdt_desc);
             holder.productReleaseTxt = (TextView) convertView
                     .findViewById(R.id.txt_pdt_price);
-            holder.favoriteImg = (ImageView) convertView
-                    .findViewById(R.id.imgbtn_favorite);
+            holder.popularImg = (ImageView) convertView
+                    .findViewById(R.id.imgbtn_popular);
             holder.ratingTxt = (TextView) convertView
                     .findViewById(R.id.txt_rating_value);
 
@@ -131,26 +131,24 @@ public class ProductListAdapter extends ArrayAdapter<Product>{
         Product product = (Product) getItem(position);
         holder.productGameTxt.setText(product.getGame());
 
-        /*If a product exists in shared preferences then set heart_red drawable
+             /*If a product exists in shared preferences popular then set popular drawable
          * and set a tag*/
 
-        if (checkFavoriteItem(product)) {
-            holder.favoriteImg.setImageResource(R.drawable.heart_red);
-            holder.favoriteImg.setTag("red");
-        } else {
-            holder.favoriteImg.setImageResource(R.drawable.grey_heart);
-            holder.favoriteImg.setTag("grey");
-        }
+            holder.popularImg.setImageResource(R.drawable.stars);
+            holder.popularImg.setTag("trending");
         return convertView;
+
     }
+    
 
     /*Checks whether a particular product exists in SharedPreferences*/
-    public boolean checkFavoriteItem(Product checkProduct) {
+
+    public boolean checkPopularItem(Product checkPopular) {
         boolean check = false;
-        List<Product> favorites = sharedPreference.getFavorites(context);
-        if (favorites != null) {
-            for (Product product : favorites) {
-                if (product.equals(checkProduct)) {
+        List<Product> mostpopular = sharedPreference2.getMostpopular(context);
+        if (mostpopular != null) {
+            for (Product product : mostpopular) {
+                if (product.equals(checkPopular)) {
                     check = true;
                     break;
                 }
@@ -158,6 +156,8 @@ public class ProductListAdapter extends ArrayAdapter<Product>{
         }
         return check;
     }
+
+
 
 
     @Override
