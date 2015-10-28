@@ -40,6 +40,9 @@ import static org.hamcrest.core.AllOf.allOf;
 /**
  * Created by Sherdil Khawaja on 10/19/2015.
  */
+
+//Scnenario: Go to Most Popular [Happy Path] for Most Popular/Trending [IT 2]
+
 public class EspressoTest13 extends ActivityInstrumentationTestCase2<MainActivity> {
 
     public EspressoTest13() {

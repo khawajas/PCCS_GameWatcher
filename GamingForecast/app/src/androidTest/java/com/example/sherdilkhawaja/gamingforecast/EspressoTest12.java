@@ -43,6 +43,9 @@ import static org.hamcrest.core.AllOf.allOf;
 /**
  * Created by Sherdil Khawaja on 10/19/2015.
  */
+
+//Scnenario: Search bar cancellation [Happy Path] for Search for Game Title [IT 2]
+
 public class EspressoTest12 extends ActivityInstrumentationTestCase2<MainActivity> {
 
     public EspressoTest12() {

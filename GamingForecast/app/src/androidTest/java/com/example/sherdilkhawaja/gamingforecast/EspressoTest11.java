@@ -39,6 +39,9 @@ import static org.hamcrest.core.AllOf.allOf;
 /**
  * Created by Sherdil Khawaja on 10/19/2015.
  */
+
+//Scnenario: Incorrect Search Case Sensitive [Sad Path] for Search for Game Title [IT 2]
+
 public class EspressoTest11 extends ActivityInstrumentationTestCase2<MainActivity> {
 
  boolean caseMatcher = false;

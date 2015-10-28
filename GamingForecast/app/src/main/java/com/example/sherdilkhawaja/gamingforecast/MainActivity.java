@@ -79,11 +79,7 @@ public class MainActivity extends FragmentActivity {
 
     }
 
-    public void buttonsearch(View view) {
-        goToUrl("https://www.youtube.com/watch?v=tBGjx-4_R10");
-    }
-
-    public void goToYou(View view) {
+    public void YoutubeButton(View view) {
         goToUrl("https://www.youtube.com/watch?v=tBGjx-4_R10");
     }
 

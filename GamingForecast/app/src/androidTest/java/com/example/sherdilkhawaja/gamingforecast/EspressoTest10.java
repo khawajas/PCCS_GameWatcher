@@ -40,10 +40,12 @@ import static org.hamcrest.core.AllOf.allOf;
 /**
  * Created by Sherdil Khawaja on 10/19/2015.
  */
+
+//Scnenario: Game Title Search Display [Happy Path] for Search for Game Title [IT 2]
+
 public class EspressoTest10 extends ActivityInstrumentationTestCase2<MainActivity> {
 
     public EspressoTest10() {
-
 
         super(MainActivity.class);
     }

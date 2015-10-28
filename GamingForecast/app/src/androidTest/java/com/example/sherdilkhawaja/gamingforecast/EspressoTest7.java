@@ -7,6 +7,7 @@ import static android.support.test.espresso.Espresso.onData;
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.action.ViewActions.longClick;
+import static android.support.test.espresso.action.ViewActions.pressMenuKey;
 import static android.support.test.espresso.action.ViewActions.swipeLeft;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.isClickable;
@@ -39,6 +40,16 @@ public class EspressoTest7 extends ActivityInstrumentationTestCase2<MainActivity
     }
 
     public void testClickAndCheckDisplayed() {
+
+        onView(withId(R.id.YoutubeButton)).perform(click());
+
+        try {
+            Thread.sleep(2500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        assertNotNull(R.id.YoutubeButton);
 
     }
 }

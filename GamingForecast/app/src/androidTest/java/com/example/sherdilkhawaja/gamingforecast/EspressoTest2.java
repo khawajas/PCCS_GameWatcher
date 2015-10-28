@@ -24,8 +24,28 @@ public class EspressoTest2 extends ActivityInstrumentationTestCase2<MainActivity
 
     public void testClickAndCheckDisplayed() {
 
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         onView(withId(R.id.list_product)).perform(swipeDown());
+
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         onView(withId(R.id.list_product)).perform(swipeUp());
+
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         assertNotNull(R.id.list_product);
 
     }

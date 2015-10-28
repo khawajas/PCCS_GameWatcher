@@ -16,6 +16,8 @@ import static android.support.test.espresso.matcher.ViewMatchers.withText;
  * Created by Pulkit on 10/28/2015.
  */
 
+//Scnenario: Most Popular Duplicate Favorites [Sad Path] for Most Popular/Trending [IT 2]
+
     public class EspressoTest15 extends ActivityInstrumentationTestCase2<MainActivity> {
 
     //THIS IS THE BOOLEAN CHECKER FOR MORE THAN ONE OF THE SAME GAME IN THE FAVORITES TAB! We have it set to false at the moment because no double favorites exists.

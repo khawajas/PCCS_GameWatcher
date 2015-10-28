@@ -12,11 +12,11 @@ import android.support.test.espresso.action.Tap;
 import android.test.ActivityInstrumentationTestCase2;
 import android.view.View;
 
-//Scnenario: Banner Alert [Happy Path] for Reminder/Banner [IT 2]
+//Scnenario: Multiple Game Alerts [Happy Path] for Reminder/Banner [IT 2]
 
-public class EspressoTest16 extends ActivityInstrumentationTestCase2<Banner> {
+public class EspressoTest18 extends ActivityInstrumentationTestCase2<Banner> {
 
-    public EspressoTest16() {
+    public EspressoTest18() {
         super(Banner.class);
     }
 
@@ -28,28 +28,8 @@ public class EspressoTest16 extends ActivityInstrumentationTestCase2<Banner> {
 
     public void testClickAndCheckDisplayed() {
 
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
 
-
-//        onView(withId(R.layout.activity_main)).perform(swipeDown());
-
-
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        onView(withId(R.id.content_frame)).perform(new GeneralClickAction(Tap.LONG, new CoordinatesProvider() {
-            @Override
-            public float[] calculateCoordinates(View view) {
-                return new float[]{500,700};
-            }
-        }, Press.FINGER));
+        //todo
 
     }
 }

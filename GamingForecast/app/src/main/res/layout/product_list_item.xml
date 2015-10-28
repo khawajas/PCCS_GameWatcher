@@ -62,7 +62,7 @@
             android:id="@+id/YoutubeButton"
             android:text="Youtube"
             android:linksClickable="true"
-            android:onClick="goToYou"
+            android:onClick="YoutubeButton"
             android:layout_above="@+id/txt_pdt_desc"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true">
