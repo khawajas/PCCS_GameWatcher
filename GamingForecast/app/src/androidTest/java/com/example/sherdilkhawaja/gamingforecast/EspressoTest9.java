@@ -64,7 +64,6 @@ public class EspressoTest9 extends ActivityInstrumentationTestCase2<MainActivity
 
         assertNotNull(R.id.YoutubePlayer);
 
-
     }
 }
 

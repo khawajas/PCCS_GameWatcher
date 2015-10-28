@@ -69,14 +69,25 @@ public class ProductListFragment extends Fragment implements
 
             products = new ArrayList<Product>();
 
-            products.add(new Product(1, "Bloodborne: The Old Hunters", "10/26/2015", "PS4", 0));
-            products.add(new Product(2, "Kingdom Hearts III", "10/20/2015", "PS4/XBox 1", 0));
-            products.add(new Product(3, "Final Fantasy XV", "2/25/2015", "PS4", 0));
-            products.add(new Product(4, "Metal Gear Solid V", "2/25/2015", "PS4", 0));
-            products.add(new Product(5, "Pokemon Rainbow", "7/25/2016", "3DS", 0));
-            products.add(new Product(6, "Call of Duty: Black Ops III", "10/12/2015", "PS4/Xbox 1", 0));
-            products.add(new Product(7, "Destiny: The Taken King", "9/20/2015", "PS4/PC", 0));
-            products.add(new Product(8, "Fallout 4", "11/10/2015", "PS4/Xbox 1/PC", 0));
+            products.add(new Product(1, "Bloodborne: The Old Hunters", "11/03/2015", "PS4", 0));
+            products.add(new Product(2, "Kingdom Hearts III", "10/28/2015", "PS4/XBox 1", 0));
+            products.add(new Product(3, "Final Fantasy XV", "10/28/2015", "PS4", 0));
+            products.add(new Product(4, "Metal Gear Solid V", "10/29/2015", "PS4", 0));
+            products.add(new Product(5, "Pokemon Rainbow", "10/30/2015", "3DS", 0));
+            products.add(new Product(6, "Call of Duty: Black Ops III", "10/31/2015", "PS4/Xbox 1", 0));
+            products.add(new Product(7, "Destiny: The Taken King", "11/01/2015", "PS4/PC", 0));
+            products.add(new Product(8, "Fallout 4", "11/02/2015", "PS4/Xbox 1/PC", 0));
+            products.add(new Product(9, "No Man's Sky", "11/04/2015", "PS4", 0));
+            products.add(new Product(10, "Chariot", "11/03/2015", "WII U", 0));
+            products.add(new Product(11, "Evolve", "11/04/2015", "PC", 0));
+            products.add(new Product(12, "Citizens of Earth", "11/05/2015", "PS4/XBox 1", 0));
+            products.add(new Product(13, "Dying Light", "11/06/2015", "PS4", 0));
+            products.add(new Product(14, "Heroes of Might & Magic III", "11/07/2015", "PS4", 0));
+            products.add(new Product(15, "Life is Strange", "11/07/2015", "PC", 0));
+            products.add(new Product(16, "Grey Goo", "11/08/2015", "PC", 0));
+            products.add(new Product(17, "Pix the Cat", "11/09/2015", "PC", 0));
+            products.add(new Product(18, "Duke Nukem 3D", "11/10/2015", "PS Vita", 0));
+            products.add(new Product(19, "Saints Row IV", "11/11/2015", "XBox/PS4", 0));
 
     }
 
@@ -122,7 +133,6 @@ public class ProductListFragment extends Fragment implements
             }
             return true;
         }
-
 
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
