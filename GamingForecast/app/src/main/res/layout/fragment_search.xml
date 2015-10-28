@@ -18,14 +18,12 @@
         android:layout_below="@+id/search_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:dividerHeight="1dp"
         android:scrollbarStyle="outsideOverlay" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_below="@+id/pdt_layout_item"
-        android:background="@color/view_divider_color"
         android:id="@+id/view" />
 
 </LinearLayout>

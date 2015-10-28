@@ -41,6 +41,8 @@ import static org.hamcrest.core.AllOf.allOf;
  */
 public class EspressoTest11 extends ActivityInstrumentationTestCase2<MainActivity> {
 
+ boolean caseMatcher = false;
+
     public EspressoTest11() {
 
 
@@ -63,7 +65,9 @@ public class EspressoTest11 extends ActivityInstrumentationTestCase2<MainActivit
         onView(withText("Search")).check(matches(isDisplayed())).perform(click());
         onView(withId(R.id.search_view)).check(matches(isDisplayed())).perform(click());
         onView(withId(R.id.search_view)).perform(typeTextIntoFocusedView("PoKeMoN RaInBOw"));
-        assertNotNull(R.id.name);
+        onView(withText("PoKeMoN RaInBOw")).check(matches(isDisplayed()));
+        caseMatcher = true;
+        assertTrue(caseMatcher);
 
 
     }

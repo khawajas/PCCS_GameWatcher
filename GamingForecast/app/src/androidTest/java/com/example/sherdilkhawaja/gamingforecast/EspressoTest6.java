@@ -1,18 +1,22 @@
 package com.example.sherdilkhawaja.gamingforecast;
+import android.support.test.espresso.action.ViewActions;
 import android.support.test.espresso.matcher.ViewMatchers;
 import android.view.View;
 
 import static android.support.test.espresso.Espresso.onData;
 import static android.support.test.espresso.Espresso.onView;
+import static android.support.test.espresso.Espresso.pressBack;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.action.ViewActions.doubleClick;
 import static android.support.test.espresso.action.ViewActions.longClick;
+import static android.support.test.espresso.action.ViewActions.pressMenuKey;
 import static android.support.test.espresso.action.ViewActions.swipeLeft;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.isClickable;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.isEnabled;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
+import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.hasToString;
 import static org.hamcrest.core.AllOf.allOf;
 import static org.hamcrest.core.StringStartsWith.startsWith;
@@ -26,6 +30,8 @@ import org.hamcrest.Matchers;
 
 public class EspressoTest6 extends ActivityInstrumentationTestCase2<MainActivity> {
 
+boolean Spammer = false;
+
     public EspressoTest6() {
         super(MainActivity.class);
     }
@@ -37,8 +43,72 @@ public class EspressoTest6 extends ActivityInstrumentationTestCase2<MainActivity
 
     public void testClickAndCheckDisplayed() {
 
-        onView(withId(R.id.list_product)).perform(doubleClick());
-        assertNotNull(R.id.list_product);
+        onView(withId(R.id.list_product)).perform(click());
+        onView(withId(R.id.list_product)).perform(click());
+        onView(withId(R.id.list_product)).perform(click());
+        onView(withId(R.id.list_product)).perform(click());
+        onView(withId(R.id.list_product)).perform(click());
+        onView(withId(R.id.list_product)).perform(click());
+        onView(withId(R.id.list_product)).perform(click());
+        onView(withId(R.id.list_product)).perform(click());
+        onView(withId(R.id.list_product)).perform(click());
+        onView(withId(R.id.list_product)).perform(click());
+        onView(withId(R.id.list_product)).perform(click());
+        onView(withId(R.id.list_product)).perform(click());
+        onView(withId(R.id.list_product)).perform(click());
+        onView(withId(R.id.list_product)).perform(click());
+        onView(withId(R.id.list_product)).perform(click());
+        onView(withId(R.id.list_product)).perform(click());
+        onView(withId(R.id.list_product)).perform(click());
+        onView(withId(R.id.list_product)).perform(click());
+        onView(withId(R.id.list_product)).perform(click());
+        onView(withId(R.id.list_product)).perform(click());
+        onView(withId(R.id.list_product)).perform(click());
+        onView(withId(R.id.list_product)).perform(click());
+        onView(withId(R.id.list_product)).perform(click());
+        onView(withId(R.id.list_product)).perform(click());
+        onView(withId(R.id.list_product)).perform(click());
+        onView(withId(R.id.list_product)).perform(click());
+        onView(withId(R.id.list_product)).perform(click());
+        onView(withId(R.id.list_product)).perform(click());
+        onView(withId(R.id.list_product)).perform(click());
+        onView(withId(R.id.list_product)).perform(click());
+        onView(withId(R.id.list_product)).perform(click());
+        onView(withId(R.id.list_product)).perform(click());
+        onView(withId(R.id.list_product)).perform(click());
+        onView(withId(R.id.list_product)).perform(click());
+        onView(withId(R.id.list_product)).perform(click());
+        onView(withId(R.id.list_product)).perform(click());
+        onView(withId(R.id.list_product)).perform(click());
+        onView(withId(R.id.list_product)).perform(click());
+        onView(withId(R.id.list_product)).perform(click());
+        onView(withId(R.id.list_product)).perform(click());
+        onView(withId(R.id.list_product)).perform(click());
+        onView(withId(R.id.list_product)).perform(click());
+        onView(withId(R.id.list_product)).perform(click());
+        onView(withId(R.id.list_product)).perform(click());
+        onView(withId(R.id.list_product)).perform(click());
+        onView(withId(R.id.list_product)).perform(click());
+        onView(withId(R.id.list_product)).perform(click());
+        onView(withId(R.id.list_product)).perform(click());
+        onView(withId(R.id.content_frame)).perform(pressMenuKey());
+        try {
+            Thread.sleep(300);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        onView(withText("Search")).check(matches(isDisplayed())).perform(click());
+
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        Spammer = true;
+        assertTrue(Spammer);
+
+
     }
 }
 

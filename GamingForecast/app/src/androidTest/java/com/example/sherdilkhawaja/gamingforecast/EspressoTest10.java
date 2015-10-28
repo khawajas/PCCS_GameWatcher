@@ -70,7 +70,7 @@ public class EspressoTest10 extends ActivityInstrumentationTestCase2<MainActivit
         onView(withId(R.id.list_view2)).perform(swipeDown());
         onView(withId(R.id.search_view)).check(matches(isDisplayed())).perform(click());
         onView(withId(R.id.search_view)).perform(typeTextIntoFocusedView("Final"));
-        assertNotNull(R.id.name);
+        assertNotNull(R.id.list_view2);
 
     }
 }

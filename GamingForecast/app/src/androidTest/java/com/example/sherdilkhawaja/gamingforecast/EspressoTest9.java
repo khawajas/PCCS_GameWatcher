@@ -42,7 +42,6 @@ public class EspressoTest9 extends ActivityInstrumentationTestCase2<Banner> {
 
 
 
-
     }
 }
 

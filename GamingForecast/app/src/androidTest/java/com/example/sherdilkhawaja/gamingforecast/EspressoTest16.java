@@ -1,0 +1,56 @@
+package com.example.sherdilkhawaja.gamingforecast;
+import static android.support.test.espresso.Espresso.onData;
+import static android.support.test.espresso.Espresso.onView;
+import static android.support.test.espresso.action.ViewActions.click;
+import static android.support.test.espresso.action.ViewActions.pressMenuKey;
+import static android.support.test.espresso.action.ViewActions.swipeDown;
+import static android.support.test.espresso.matcher.ViewMatchers.withId;
+import android.support.test.espresso.action.CoordinatesProvider;
+import android.support.test.espresso.action.GeneralClickAction;
+import android.support.test.espresso.action.Press;
+import android.support.test.espresso.action.Tap;
+import android.test.ActivityInstrumentationTestCase2;
+import android.view.View;
+
+//Scnenario: View a Trailer [Happy Path] for Add Video Preview [IT 1]
+
+public class EspressoTest16 extends ActivityInstrumentationTestCase2<Banner> {
+
+    public EspressoTest16() {
+        super(Banner.class);
+    }
+
+    public void setUp() throws Exception {
+        super.setUp();
+        getActivity();
+    }
+
+
+    public void testClickAndCheckDisplayed() {
+
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+
+//        onView(withId(R.layout.activity_main)).perform(swipeDown());
+
+
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        onView(withId(R.id.content_frame)).perform(new GeneralClickAction(Tap.LONG, new CoordinatesProvider() {
+            @Override
+            public float[] calculateCoordinates(View view) {
+                return new float[]{500,700};
+            }
+        }, Press.FINGER));
+
+    }
+}
+

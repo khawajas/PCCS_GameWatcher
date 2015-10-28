@@ -24,6 +24,7 @@ import static android.support.test.espresso.Espresso.openActionBarOverflowOrOpti
 import static android.support.test.espresso.action.ViewActions.clearText;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.action.ViewActions.closeSoftKeyboard;
+import static android.support.test.espresso.action.ViewActions.doubleClick;
 import static android.support.test.espresso.action.ViewActions.longClick;
 import static android.support.test.espresso.action.ViewActions.pressMenuKey;
 import static android.support.test.espresso.action.ViewActions.replaceText;
@@ -65,8 +66,25 @@ public class EspressoTest12 extends ActivityInstrumentationTestCase2<MainActivit
         }
         onView(withText("Search")).check(matches(isDisplayed())).perform(click());
         onView(withId(R.id.search_view)).check(matches(isDisplayed())).perform(click());
-        onView(withId(R.id.search_view)).perform(typeTextIntoFocusedView("PoKeMoN RaInBOw"));
-        assertNotNull(R.id.name);
+        onView(withId(R.id.search_view)).perform(typeTextIntoFocusedView("l"));
+
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        onView(withText("l")).perform(clearText());
+
+
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        assertNotNull(R.id.list_view2);
+
 
     }
 }
