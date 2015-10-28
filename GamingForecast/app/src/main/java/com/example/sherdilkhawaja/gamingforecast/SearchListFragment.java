@@ -43,7 +43,7 @@ public class SearchListFragment extends Fragment implements SearchView.OnQueryTe
                 .inflate(R.layout.fragment_search, container, false);
 
 
-        lv = (ListView) rootView.findViewById(R.id.list_view);
+        lv = (ListView) rootView.findViewById(R.id.list_view2);
         search_view = (SearchView) rootView.findViewById(R.id.search_view);
 
 

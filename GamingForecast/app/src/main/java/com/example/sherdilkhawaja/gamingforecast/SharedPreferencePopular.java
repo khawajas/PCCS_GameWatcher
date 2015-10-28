@@ -53,6 +53,23 @@ public class SharedPreferencePopular {
         }
     }
 
+    public void addFavorite(Context context, Product product) {
+        List<Product> favorites = SharedPreference.getFavorites(context);
+        if (favorites == null)
+            favorites = new ArrayList<Product>();
+        favorites.add(product);
+        SharedPreference.saveFavorites(context, favorites);
+    }
+
+    public void removeFavorite(Context context, Product product) {
+        ArrayList<Product> favorites = SharedPreference.getFavorites(context);
+        if (favorites != null) {
+            favorites.remove(product);
+            SharedPreference.saveFavorites(context, favorites);
+        }
+    }
+
+
     public ArrayList<Product> getMostpopular(Context context) {
         SharedPreferences settings;
         List<Product> mostpopular;

@@ -23,6 +23,7 @@ public class MainActivity extends FragmentActivity {
     FavoriteListFragment favListFragment;
     PopularListFragment popListFragment;
     SearchListFragment searchListFragment;
+    static int counter = 0;
 
     Button btn;
 

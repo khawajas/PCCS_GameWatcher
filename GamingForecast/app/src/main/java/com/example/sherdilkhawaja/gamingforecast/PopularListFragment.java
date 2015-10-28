@@ -1,5 +1,6 @@
 package com.example.sherdilkhawaja.gamingforecast;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Handler;
 
@@ -7,6 +8,7 @@ import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.media.Rating;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -32,6 +34,7 @@ public class PopularListFragment extends Fragment {
     SharedPreference sharedPreference;
     SharedPreferencePopular sharedPreference2;
     List<Product> mostpopular;
+    List<Product> gameList;
 
     Activity activity;
     ProductListAdapterTwo popularListAdapter;
@@ -54,8 +57,12 @@ public class PopularListFragment extends Fragment {
 
         popularList = (ListView) view.findViewById(R.id.list_product);
 
-        mostpopular.add(new Product(1, "Bloodborne: The Old Hunters", "10/26/2015", "PS4", "1"));
-        mostpopular.add(new Product(2, "Kingdom Hearts III", "10/20/2015", "PS4/XBox 1", "2"));
+
+        //this is to be updated by the app creators based on searches/favorites. Manually add to most popular page to let users know what others are searching.
+
+        mostpopular.add(new Product(1, "Bloodborne: The Old Hunters", "11/03/2015", "PS4", 0));
+        mostpopular.add(new Product(2, "Kingdom Hearts III", "10/27/2015", "PS4/XBox 1", 0));
+        mostpopular.add(new Product(3, "Final Fantasy XV", "10/28/2015", "PS4", 0));
 
         if (mostpopular == null) {
             showAlert(getResources().getString(R.string.nothing_pop),
@@ -84,6 +91,29 @@ public class PopularListFragment extends Fragment {
                                                         }
                                                     }
                 );
+
+
+                popularList.setOnItemLongClickListener(new OnItemLongClickListener() {
+
+                                                                    @Override
+                                                                    public boolean onItemLongClick(AdapterView<?> parent, View view,
+                                                                                                   int position, long id) {
+
+                                                                        ImageView button = (ImageView) view
+                                                                                .findViewById(R.id.imgbtn_popular);
+                                                                        if (MainActivity.counter == 0) {
+                                                                            MainActivity.counter++;
+                                                                            sharedPreference2.addFavorite(activity,
+                                                                                    mostpopular.get(position));
+                                                                            Toast.makeText(activity, activity.getResources().getString(R.string.add_favr), Toast.LENGTH_SHORT).show();
+                                                                        }
+                                                                        else{
+                                                                            Toast.makeText(activity, activity.getResources().getString(R.string.error), Toast.LENGTH_SHORT).show();
+                                                                        }
+                                                                        return true;
+                                                                    }
+                                                                }
+                        );
             }
         }
         return view;

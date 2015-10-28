@@ -14,9 +14,16 @@
         android:queryHint="Search..."/>
 
     <ListView
-        android:id="@+id/list_view"
+        android:id="@+id/list_view2"
         android:layout_below="@+id/search_view"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent" />
-
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:divider="#0e1717"
+        android:dividerHeight="6dp"
+        android:drawSelectorOnTop="true"
+        android:footerDividersEnabled="false"
+        android:background="@color/view_divider_color"
+        android:padding="5dp"
+        android:scrollbarStyle="outsideOverlay" />
 </LinearLayout>

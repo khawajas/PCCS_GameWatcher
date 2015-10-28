@@ -23,7 +23,7 @@ public class SharedPreference {
 
 
     //These methods are used to maintaining favorites
-    public void saveFavorites(Context context2, List<Product> favorites) {
+    public static void saveFavorites(Context context2, List<Product> favorites) {
         SharedPreferences settings;
         Editor editor;
 
@@ -53,7 +53,7 @@ public class SharedPreference {
         }
     }
 
-    public ArrayList<Product> getFavorites(Context context) {
+    public static ArrayList<Product> getFavorites(Context context) {
         SharedPreferences settings;
         List<Product> favorites;
 

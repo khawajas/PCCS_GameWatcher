@@ -69,14 +69,14 @@ public class ProductListFragment extends Fragment implements
 
             products = new ArrayList<Product>();
 
-            products.add(new Product(1, "Bloodborne: The Old Hunters", "10/26/2015", "PS4", "1"));
-            products.add(new Product(2, "Kingdom Hearts III", "10/20/2015", "PS4/XBox 1", "2"));
-            products.add(new Product(3, "Final Fantasy XV", "2/25/2015", "PS4", "3"));
-            products.add(new Product(4, "Metal Gear Solid V", "2/25/2015", "PS4", "4"));
-            products.add(new Product(5, "Pokemon Rainbow", "7/25/2016", "3DS", "5"));
-            products.add(new Product(6, "Call of Duty: Black Ops III", "10/12/2015", "PS4/Xbox 1", "3"));
-            products.add(new Product(7, "Destiny: The Taken King", "9/20/2015", "PS4/PC", "2"));
-            products.add(new Product(8, "Fallout 4", "11/10/2015", "PS4/Xbox 1/PC", "1"));
+            products.add(new Product(1, "Bloodborne: The Old Hunters", "10/26/2015", "PS4", 0));
+            products.add(new Product(2, "Kingdom Hearts III", "10/20/2015", "PS4/XBox 1", 0));
+            products.add(new Product(3, "Final Fantasy XV", "2/25/2015", "PS4", 0));
+            products.add(new Product(4, "Metal Gear Solid V", "2/25/2015", "PS4", 0));
+            products.add(new Product(5, "Pokemon Rainbow", "7/25/2016", "3DS", 0));
+            products.add(new Product(6, "Call of Duty: Black Ops III", "10/12/2015", "PS4/Xbox 1", 0));
+            products.add(new Product(7, "Destiny: The Taken King", "9/20/2015", "PS4/PC", 0));
+            products.add(new Product(8, "Fallout 4", "11/10/2015", "PS4/Xbox 1/PC", 0));
 
     }
 

@@ -7,9 +7,9 @@ public class Product {
     public String Name;
     public String Date;
     public String Platform;
-    public String Rating;
+    public int Rating;
 
-    Product(int gameID, String gameName, String releaseDate, String platform, String gameRating) {
+    Product(int gameID, String gameName, String releaseDate, String platform, int gameRating) {
         this.Game = gameID;
         this.Name = gameName;
         this.Date = releaseDate;
@@ -30,7 +30,7 @@ public class Product {
         return Date;
     }
 
-    public String getRating() {
+    public int getRating() {
         return Rating; }
 
     public String getPlatform() {

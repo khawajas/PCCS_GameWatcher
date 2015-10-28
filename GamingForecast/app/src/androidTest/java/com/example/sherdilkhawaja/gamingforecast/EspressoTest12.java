@@ -14,19 +14,21 @@ import android.support.test.espresso.action.Tap;
 import android.test.ActivityInstrumentationTestCase2;
 import android.test.ActivityUnitTestCase;
 import android.text.style.ClickableSpan;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.SearchView;
 
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.Espresso.openActionBarOverflowOrOptionsMenu;
 import static android.support.test.espresso.action.ViewActions.clearText;
 import static android.support.test.espresso.action.ViewActions.click;
+import static android.support.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static android.support.test.espresso.action.ViewActions.longClick;
 import static android.support.test.espresso.action.ViewActions.pressMenuKey;
 import static android.support.test.espresso.action.ViewActions.replaceText;
 import static android.support.test.espresso.action.ViewActions.swipeDown;
 import static android.support.test.espresso.action.ViewActions.swipeLeft;
-import static android.support.test.espresso.action.ViewActions.swipeUp;
 import static android.support.test.espresso.action.ViewActions.typeTextIntoFocusedView;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.assertThat;
@@ -40,9 +42,9 @@ import static org.hamcrest.core.AllOf.allOf;
 /**
  * Created by Sherdil Khawaja on 10/19/2015.
  */
-public class EspressoTest10 extends ActivityInstrumentationTestCase2<MainActivity> {
+public class EspressoTest12 extends ActivityInstrumentationTestCase2<MainActivity> {
 
-    public EspressoTest10() {
+    public EspressoTest12() {
 
 
         super(MainActivity.class);
@@ -62,14 +64,8 @@ public class EspressoTest10 extends ActivityInstrumentationTestCase2<MainActivit
             e.printStackTrace();
         }
         onView(withText("Search")).check(matches(isDisplayed())).perform(click());
-        try {
-            Thread.sleep(1500);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        onView(withId(R.id.list_view2)).perform(swipeDown());
         onView(withId(R.id.search_view)).check(matches(isDisplayed())).perform(click());
-        onView(withId(R.id.search_view)).perform(typeTextIntoFocusedView("Final"));
+        onView(withId(R.id.search_view)).perform(typeTextIntoFocusedView("PoKeMoN RaInBOw"));
         assertNotNull(R.id.name);
 
     }
