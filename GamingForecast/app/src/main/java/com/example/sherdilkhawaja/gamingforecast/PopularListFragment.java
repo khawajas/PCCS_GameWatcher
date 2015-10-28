@@ -33,8 +33,7 @@ public class PopularListFragment extends Fragment {
     ListView popularList;
     SharedPreference sharedPreference;
     SharedPreferencePopular sharedPreference2;
-    List<Product> mostpopular;
-    List<Product> gameList;
+    static List<Product> mostpopular;
 
     Activity activity;
     ProductListAdapterTwo popularListAdapter;

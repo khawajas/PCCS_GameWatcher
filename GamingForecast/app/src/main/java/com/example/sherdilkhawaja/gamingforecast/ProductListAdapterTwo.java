@@ -114,15 +114,15 @@ public class ProductListAdapterTwo extends ArrayAdapter<Product>{
             convertView = inflater.inflate(R.layout.popular_list_item, null);
             holder = new ViewHolder();
             holder.productGameTxt = (TextView) convertView
-                    .findViewById(R.id.txt_pdt_name);
+                    .findViewById(R.id.popular_name);
             holder.productPlatformTxt = (TextView) convertView
-                    .findViewById(R.id.txt_pdt_desc);
+                    .findViewById(R.id.popular_desc);
             holder.productReleaseTxt = (TextView) convertView
-                    .findViewById(R.id.txt_pdt_price);
+                    .findViewById(R.id.popular_price);
             holder.popularImg = (ImageView) convertView
                     .findViewById(R.id.imgbtn_popular);
             holder.ratingTxt = (TextView) convertView
-                    .findViewById(R.id.txt_rating_value);
+                    .findViewById(R.id.popular_rating);
 
             convertView.setTag(holder);
         } else {

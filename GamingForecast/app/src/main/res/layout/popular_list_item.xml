@@ -7,19 +7,19 @@
     android:id="@+id/backgrounds">
 
     <RelativeLayout
-        android:id="@+id/pdt_layout_item"
+        android:id="@+id/popular_item"
         android:layout_width="fill_parent"
         android:layout_height="40dp" >
 
         <TextView
-            android:id="@+id/txt_pdt_name"
+            android:id="@+id/popular_name"
             android:layout_width="wrap_content"
             android:gravity="center"
             android:textColor="#ffffff"
             android:layout_height="wrap_content"
             android:padding="6dp" />
         <TextView
-            android:id="@+id/txt_rating_value"
+            android:id="@+id/popular_rating"
             android:layout_width="wrap_content"
             android:gravity="center"
             android:textColor="#ffffff"
@@ -27,7 +27,7 @@
             android:layout_below="@+id/txt_pdt_name"
             android:padding="6dp" />
         <TextView
-            android:id="@+id/txt_pdt_price"
+            android:id="@+id/popular_price"
             android:layout_width="wrap_content"
             android:gravity="center"
             android:textColor="#ffffff"
@@ -36,7 +36,7 @@
             android:padding="6dp" />
 
         <TextView
-            android:id="@+id/txt_pdt_desc"
+            android:id="@+id/popular_desc"
             android:layout_width="wrap_content"
             android:gravity="center"
             android:textColor="#ffffff"
@@ -61,6 +61,6 @@
         android:layout_height="1dp"
         android:layout_below="@+id/pdt_layout_item"
         android:background="@color/view_divider_color"
-        android:id="@+id/view" />
+        android:id="@+id/views" />
 
 </RelativeLayout>

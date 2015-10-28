@@ -16,14 +16,16 @@
     <ListView
         android:id="@+id/list_view2"
         android:layout_below="@+id/search_view"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:gravity="center"
-        android:divider="#0e1717"
-        android:dividerHeight="6dp"
-        android:drawSelectorOnTop="true"
-        android:footerDividersEnabled="false"
-        android:background="@color/view_divider_color"
-        android:padding="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:dividerHeight="1dp"
         android:scrollbarStyle="outsideOverlay" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/pdt_layout_item"
+        android:background="@color/view_divider_color"
+        android:id="@+id/view" />
+
 </LinearLayout>
