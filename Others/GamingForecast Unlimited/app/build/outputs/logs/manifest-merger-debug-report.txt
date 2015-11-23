@@ -23,7 +23,7 @@ MERGED from [com.android.support:support-v4:23.0.1] C:\Users\topay\Documents\PCC
 		ADDED from C:\Users\topay\Documents\PCCS-app_project_355\GamingForecast\app\src\main\AndroidManifest.xml:6:9-35
 	android:icon
 		ADDED from C:\Users\topay\Documents\PCCS-app_project_355\GamingForecast\app\src\main\AndroidManifest.xml:7:9-41
-activity#com.example.sherdilkhawaja.gamingforecast.MainActivity
+activity#com.example.pulkitrustgi.gamingforecast.MainActivity
 ADDED from C:\Users\topay\Documents\PCCS-app_project_355\GamingForecast\app\src\main\AndroidManifest.xml:9:9-17:20
 	android:label
 		ADDED from C:\Users\topay\Documents\PCCS-app_project_355\GamingForecast\app\src\main\AndroidManifest.xml:11:13-42

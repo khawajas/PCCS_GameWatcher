@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="add_favr">Added game to your Favorites tab!</string>
+<string name="remove_favr">Removed game from your Favorites tab!</string>
+<string name="no_favorites_items">Currently no favorites added!</string>
+<string name="no_favorites_msg">Press/hold on a game to add to favorites.</string>
+<string name="no_suggested_msg">Favorite an item to see suggested games!</string>
+<string name ="whysuggested">These items are displayed because of: </string>
+<string name ="add_pop">Added to popular!</string>
+<string name ="remove_pop">Removed from popular!</string>
+<string name ="otherslike">These are the current most popular games!</string>
+<string name="error">This game is already favorited!</string>
+<string name="favorites_remove_msg">Press/hold on the game to remove from favorites.</string>
+<string name="nothing_pop">Nothing is trending or popular right now!</string>
+<string name="nothing_suggested">No current suggestions for you!</string>
+<string name ="comeback">Please check again later!</string>
+<string name ="ok">Please click OK to continue.</string>
+<string name ="filtergames">Now filtering your games...</string>
+</resources>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#80000000"
+    android:descendantFocusability="blocksDescendants"
+    android:id="@+id/backgrounds">
+
+    <RelativeLayout
+        android:id="@+id/pdt_layout_item"
+        android:layout_width="fill_parent"
+        android:layout_height="67dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:textAllCaps="false"
+            android:id="@+id/txt_pdt_name"
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:layout_height="wrap_content"
+            android:padding="6dp" />
+        <TextView
+            android:textAllCaps="false"
+            android:id="@+id/txt_rating_value"
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_pdt_name"
+            android:padding="6dp" />
+        <TextView
+            android:id="@+id/txt_pdt_price"
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_rating_value"
+            android:padding="6dp" />
+        <TextView
+            android:id="@+id/txt_pdt_desc"
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_pdt_price"
+            android:padding="6dp" />
+        <TextView
+            android:id="@+id/txt_pdt_genre"
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:layout_alignRight="@+id/txt_pdt_name"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:padding="6dp" />
+        <ImageView
+            android:id="@+id/imgbtn_favorite"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_alignBottom="@+id/txt_pdt_desc"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="1dp"
+            android:background="@null"
+            android:contentDescription="@string/favorites" />
+        <Button
+            android:clickable="true"
+            android:autoLink="web"
+            android:cursorVisible="true"
+            android:id="@+id/YoutubeButton"
+            android:linksClickable="true"
+            android:onClick="YoutubeButton"
+            android:layout_width="82dp"
+            android:layout_height="35dp"
+            android:textSize="7dp"
+            android:text="Youtube"
+            android:drawableLeft="@mipmap/yt"
+            android:layout_alignBottom="@+id/txt_rating_value"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="1dp"
+            android:layout_marginStart="1dp">
+
+        </Button>
+
+    </RelativeLayout>
+
+</RelativeLayout>

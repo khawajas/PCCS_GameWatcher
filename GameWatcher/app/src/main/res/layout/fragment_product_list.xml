@@ -1,0 +1,124 @@
+
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center">
+
+    <ListView
+        android:id="@+id/list_product"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:drawSelectorOnTop="true"
+        android:footerDividersEnabled="false"
+        android:scrollbarStyle="outsideOverlay"
+        android:layout_below="@+id/linearLayout"
+        android:layout_alignRight="@+id/linearLayout"
+        android:layout_alignEnd="@+id/linearLayout"
+        android:layout_marginTop="43dp" />
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:weightSum="1"
+        android:id="@+id/linearLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="1dp"
+        android:layout_marginStart="1dp">
+
+        <Button android:layout_height="1dp"
+            android:clickable="true"
+            android:autoLink="web"
+            android:cursorVisible="true"
+            android:layout_width="1dp"
+            android:id="@+id/BadButton"
+            android:text="Youtube"
+            android:linksClickable="true"
+            android:onClick="badurl"
+            android:layout_below="@+id/linearLayout"
+            android:layout_alignLeft="@+id/linearLayout"
+            android:layout_alignStart="@+id/linearLayout"></Button>
+
+        <Button android:layout_height="1dp"
+            android:clickable="true"
+            android:autoLink="web"
+            android:background="#0000ff"
+            android:cursorVisible="true"
+            android:layout_width="1dp"
+            android:id="@+id/YoutubePlayer"
+            android:text="Youtube"
+            android:linksClickable="true"
+            android:onClick="YoutubePlayer"
+            android:layout_alignParentTop="true"></Button>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="43dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:gravity="bottom"
+        android:text="            RPG                ADVENTURE             FPS                  RTS                  PUZZLE"
+        android:textSize="10dp"
+        android:background="#80000000"
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="false" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkRPG"
+        android:checked="false"
+        android:layout_marginRight="41dp"
+        android:layout_marginEnd="41dp"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/checkADVENTURE"
+        android:layout_toStartOf="@+id/checkADVENTURE" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkADVENTURE"
+        android:checked="false"
+        android:layout_marginRight="38dp"
+        android:layout_marginEnd="38dp"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/checkFPS"
+        android:layout_toStartOf="@+id/checkFPS" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkFPS"
+        android:checked="false"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkRTS"
+        android:checked="false"
+        android:layout_marginRight="38dp"
+        android:layout_marginEnd="38dp"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/checkPUZZLE"
+        android:layout_toStartOf="@+id/checkPUZZLE" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkPUZZLE"
+        android:checked="false"
+        android:layout_marginRight="35dp"
+        android:layout_marginEnd="31dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignEnd="@+id/linearLayout" />
+
+</RelativeLayout>

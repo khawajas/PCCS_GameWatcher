@@ -1,0 +1,43 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
+
+    <item
+        android:id="@+id/menu_favorites"
+        android:orderInCategory="299"
+        app:showAsAction="ifRoom|withText"
+        android:title="@string/favorites"/>
+
+
+    <item
+        android:id="@+id/most_popular"
+        android:orderInCategory="200"
+        app:showAsAction="ifRoom|withText"
+        android:title="@string/mostpopular"/>
+
+    <item
+        android:id="@+id/search"
+        android:orderInCategory="202"
+        app:showAsAction="ifRoom|withText"
+        android:title="@string/search"/>
+
+    <item
+        android:id="@+id/suggested"
+        android:orderInCategory="201"
+        app:showAsAction="ifRoom|withText"
+        android:title="@string/suggested"/>
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" />
+
+
+    <FrameLayout
+        android:id="@+id/displayList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+    </FrameLayout>
+
+</menu>

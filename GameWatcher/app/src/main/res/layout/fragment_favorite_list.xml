@@ -1,0 +1,74 @@
+<ViewSwitcher
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/viewSwitcher" >
+
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center">
+
+    <ListView
+        android:id="@+id/list_product"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:drawSelectorOnTop="true"
+        android:footerDividersEnabled="false"
+        android:scrollbarStyle="outsideOverlay"
+        android:layout_below="@+id/linearLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:weightSum="1"
+        android:id="@+id/linearLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="1dp"
+        android:layout_marginStart="1dp">
+
+        <Button android:layout_height="1dp"
+            android:clickable="true"
+            android:autoLink="web"
+            android:cursorVisible="true"
+            android:layout_width="1dp"
+            android:id="@+id/BadButton"
+            android:text="Youtube"
+            android:linksClickable="true"
+            android:onClick="badurl"
+            android:layout_below="@+id/linearLayout"
+            android:layout_alignLeft="@+id/linearLayout"
+            android:layout_alignStart="@+id/linearLayout"></Button>
+
+        <Button android:layout_height="1dp"
+            android:clickable="true"
+            android:autoLink="web"
+            android:cursorVisible="true"
+            android:layout_width="1dp"
+            android:id="@+id/YoutubePlayer"
+            android:text="Youtube"
+            android:linksClickable="true"
+            android:onClick="YoutubePlayer"
+            android:layout_alignParentTop="true"></Button>
+
+    </LinearLayout>
+
+</RelativeLayout>
+
+<RelativeLayout
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+android:gravity="center_horizontal" >
+<ListView
+    android:id="@+id/new_listView"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_centerVertical="true" />
+</RelativeLayout>
+
+</ViewSwitcher>

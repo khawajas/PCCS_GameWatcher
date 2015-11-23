@@ -1,0 +1,24 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.pulkit.gamewatcher">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/gw"
+        android:label="@string/names">
+
+        <meta-data
+            android:name="android.app.default_searchable"
+            android:value=".app.Search" />
+
+        <activity
+            android:name="com.example.pulkit.gamewatcher.MainActivity"
+            android:label="@string/names">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"></action>
+                <action android:name="android.intent.action.SEARCH" />/>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>
+
