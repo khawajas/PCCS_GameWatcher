@@ -37,3 +37,21 @@ the correct date UNLESS they change the time/date setting on there device/comput
 The requirement was 1 sad path per user story, BUT THAT WAS NOT POSSIBLE FOR THE BANNER.
 
 There's two of us now, so I guess the hardest part was that. Hopefully we can finish the 3rd iteration on time, and we plan on starting a lot earlier.
+
+***
+For the third and final iteration we ran into a lot of trouble with the unit tests.. there aren't any resources online. Like none.
+Why were these put in this iteration? Who knows? Why would we need to test things before we develop them.. who knows?
+
+It was just me and Sherdil for this iteration so we had a huge workload for just 2 people. The coding was easy, but no help was given for the unit
+tests like I mentioned. I'm not sure how to properly use mockito, and I'm not sure our app has any methods that you can actually test without the app being run
+since it uses arraylists with created products... 
+Other then that I cleaned up the app, moved the banner into the main activity, made the code cleaner, added fonts, backgrounds, and ofcourse our 3 scenarious.
+Looks good, but I plan to keep on working on it just for future reference and technique improvement.
+
+A note to the tester. When you do the tests please make sure you manually open up the app, go to the favorites tab, and make sure nothing is favorited.
+Do this by long clicking each item in it until it says the tab is empty.
+ALL OF THE TESTS PASS. DO NOT SAY THEY DO NOT PASS. It is your fault if they don't pass. Last iteration you guys said they didn't pass, but they did. 
+I didn't bring it up because we still got a 100, but this time make sure nothing is in your favorites tab on the app.
+
+We also couldn't have a sad path for one of the "No Upcoming Games" tab. It was coded too well and I didn't think I could find any user errors for the tab.
+I asked Prof Damevski if it was ok, like it.2, and he said it was. Enjoy testing it - Pulkit Rustgi

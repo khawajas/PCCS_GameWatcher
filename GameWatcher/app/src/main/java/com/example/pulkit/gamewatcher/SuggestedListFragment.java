@@ -3,6 +3,7 @@ package com.example.pulkit.gamewatcher;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Typeface;
 import android.os.Build;
@@ -29,6 +30,7 @@ public class SuggestedListFragment extends Fragment {
 
     Activity activity;
     SuggestedListAdapter suggestedListAdapter;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -117,7 +119,6 @@ public class SuggestedListFragment extends Fragment {
 
         return view;
     }
-
 
 
     public void showAlert(String title, String message) {

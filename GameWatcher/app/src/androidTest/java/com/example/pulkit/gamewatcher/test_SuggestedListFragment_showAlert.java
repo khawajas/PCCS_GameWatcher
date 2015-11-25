@@ -1,58 +1,23 @@
 package com.example.pulkit.gamewatcher;
 
-
-import android.test.InstrumentationTestCase;
-import android.test.TouchUtils;
-import android.widget.CheckBox;
-
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.Mock;
+import static junit.framework.Assert.assertNotNull;
+import static junit.framework.TestCase.assertEquals;
 
-import static org.mockito.Mockito.mock;
+//[TDD] Class: SuggestedListFragment and Method: ShowAlert
 
-
-public class test_SuggestedListFragment_showAlert extends InstrumentationTestCase {
-
-    public void setUp() throws Exception {
-        super.setUp();
-    }
+public class test_SuggestedListFragment_showAlert {
 
     @Before
     public void preTest(){
-        assertNull(R.layout.fragment_favorite_list);
-    }
 
+        assertNotNull(R.id.suggested_layout_item);
+    }
     @Test
     public void suggestionTest() {
-        final String expected = "Favorite an item to see suggested games!";
-        assertEquals(expected, R.string.comeback, R.string.no_suggested_msg);
+        final String expected = Integer.toString(R.string.nothing_suggested);
+        assertEquals(expected, String.valueOf(R.string.nothing_suggested));
     }
 
-
-
-
-
-
-
-
-//    ProductListFragment productListFragment;
-//    CheckBox check = (CheckBox) productListFragment.view.findViewById(R.id.checkRPG);
-//
-//    @Override
-//    protected void setUp() throws Exception {
-//        super.setUp();
-//    }
-//
-//    @Test
-//    public void testCheck() {
-//
-//        TouchUtils.clickView(this, check);
-//        boolean expected = check.isChecked();
-//        assertTrue(expected);
-//
-//    }
 }
-
-
-

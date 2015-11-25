@@ -28,6 +28,7 @@ public class PopularListFragment extends Fragment {
 
     public static final String ARG_ITEM_ID = "Popular list";
 
+    String currpop = "Current Popular Games";
     ListView popularList;
     SharedPreferenceGeneric sharedPreference;
     List<Product> mostpopular;
@@ -59,7 +60,7 @@ public class PopularListFragment extends Fragment {
 
         Typeface newtypeface = Typeface.createFromAsset(activity.getAssets(), "newtext.ttf");
         TextView suggText = (TextView) view.findViewById(R.id.popular);
-        suggText.setText("Current Popular Games");
+        suggText.setText(currpop);
         suggText.setTypeface(newtypeface);
 
         //this is to be updated by the app creators based on searches/favorites. Manually add to most popular page below to let users know what others are searching.

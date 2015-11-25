@@ -33,6 +33,7 @@ dependencies {
     compile 'com.google.code.gson:gson:2.2.+'
     compile files('libs/gson-2.2.3/gson-2.2.3.jar')
     testCompile 'org.robolectric:robolectric:3.0'
+    testCompile 'org.hamcrest:hamcrest-library:1.1'
     testCompile ('com.squareup.assertj:assertj-android:1.0.0') {
         exclude module: 'support-annotations'
     }

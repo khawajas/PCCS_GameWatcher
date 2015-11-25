@@ -10,7 +10,7 @@ public class Product {
     public int Rating;
     public String Genre;
 
-    Product(int gameID, String gameName, String releaseDate, String platform, int gameRating, String genre) {
+    public Product(int gameID, String gameName, String releaseDate, String platform, int gameRating, String genre) {
         this.Game = gameID;
         this.Name = gameName;
         this.Date = releaseDate;
@@ -28,6 +28,14 @@ public class Product {
         return Name;
     }
 
+    public String getPlatform() {
+        return Platform;
+    }
+
+    public int getRating() {
+        return Rating;
+    }
+
     public String getReleaseDate() {
         return Date;
     }
@@ -35,6 +43,33 @@ public class Product {
     public String getGenre() {
         return Genre;
     }
+
+
+
+    public int setId(int Game) {
+        return this.Game;
+    }
+
+    public String setGame(String Name) {
+        return this.Name;
+    }
+
+    public String setReleaseDate(String Date) {
+        return this.Date;
+    }
+
+    public String setPlatform(String Platform) {
+        return this.Platform;
+    }
+
+    public String setGenre(String Genre) {
+       return this.Genre;
+    }
+
+    public int setRating(int Rating){
+        return this.Rating;
+    }
+
 
     @Override
     public int hashCode() {

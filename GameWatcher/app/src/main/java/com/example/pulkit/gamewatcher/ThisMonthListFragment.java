@@ -34,8 +34,6 @@ public class ThisMonthListFragment extends Fragment {
 
     List<Product> months;
     ArrayList<Product> favorites;
-    ArrayList<Product> products;
-
     String spinnervalue = "";
     private String[] arraySpinner;
     boolean monther = false;

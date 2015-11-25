@@ -31,6 +31,9 @@ public class ProductListAdapter extends ArrayAdapter<Product>{
         sharedPreferenceFavorite = new SharedPreferenceFavorite();
     }
 
+
+
+
     public abstract class ProductFilter extends Filter {
         @Override
         public FilterResults performFiltering(CharSequence constraint) {
