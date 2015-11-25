@@ -16,6 +16,8 @@ public class test_Product_Product extends InstrumentationTestCase {
     private Product mockedProject = new Product(mGame, mName, mDate, mPlatform, mRating, mGenre);
 
 
+    //checks to see if you can populate the arraylist Product in Product
+
     @Override
     protected void setUp() throws Exception {
         super.setUp();

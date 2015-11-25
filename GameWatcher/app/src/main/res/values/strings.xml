@@ -11,5 +11,5 @@
     <string name="mostpopular">Most Popular</string>
     <string name="product">Product</string>
     <string name="generic">Generic</string>
-    <string name="currp">Current Popular Games</string>
+    <string name="currpop">Current Popular Games</string>
 </resources>

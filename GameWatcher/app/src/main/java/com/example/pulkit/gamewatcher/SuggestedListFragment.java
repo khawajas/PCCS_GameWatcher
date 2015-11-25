@@ -53,7 +53,7 @@ public class SuggestedListFragment extends Fragment {
 
         Typeface newtypeface = Typeface.createFromAsset(activity.getAssets(), "newtext.ttf");
         TextView suggText = (TextView) view.findViewById(R.id.suggestedxd);
-        suggText.setText("Suggested games");
+        suggText.setText(R.string.suggestedgames);
         suggText.setTypeface(newtypeface);
 
         if (favorites.size() != 0) {

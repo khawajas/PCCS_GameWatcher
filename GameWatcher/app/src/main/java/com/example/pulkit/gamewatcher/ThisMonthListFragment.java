@@ -46,7 +46,6 @@ public class ThisMonthListFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         activity = getActivity();
-        activity = getActivity();
         sharedPreferenceMonth = new SharedPreferenceMonth();
         sharedPreferenceFavorite = new SharedPreferenceFavorite();
         sharedPreferencePopular = new SharedPreferenceGeneric();
