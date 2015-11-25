@@ -39,6 +39,10 @@ The requirement was 1 sad path per user story, BUT THAT WAS NOT POSSIBLE FOR THE
 There's two of us now, so I guess the hardest part was that. Hopefully we can finish the 3rd iteration on time, and we plan on starting a lot earlier.
 
 ***
+
+WE DID NOT INCLUDE OUR TDD AS PART OF THE 9 ESPRESSO TESTS. WE HAVE 14 TESTS TOTAL. PLEASE READ THIS. 9 ESPRESSO TESTS, 5 TDD USING MOCK OBJECTS!
+THESE 5 TDD ARE NOT ON GITHUB OR ANY OF THE ITERATIONS BECAUSE WE USED 9 ESPRESSO TESTS FOR THOSE.
+
 For the third and final iteration we ran into a lot of trouble with the unit tests.. there aren't any resources online. Like none.
 Why were these put in this iteration? Who knows? Why would we need to test things before we develop them.. who knows?
 
