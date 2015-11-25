@@ -40,7 +40,6 @@ public class ThisMonthListFragment extends Fragment {
     ListView monthsList;
     Activity activity;
     ThisMonthAdapter thisMonthAdapter;
-    ProductListAdapter productListAdapter;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

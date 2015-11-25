@@ -4,6 +4,7 @@ import android.test.InstrumentationTestCase;
 import org.junit.Test;
 
 //[TDD] Class: ThisMonthListFragment and Method: Spinner
+
 public class test_thisMonthListFragment_spinner extends InstrumentationTestCase {
 
     private ThisMonthListFragment mockedProject = new ThisMonthListFragment();
