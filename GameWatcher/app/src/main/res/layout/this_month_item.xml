@@ -6,7 +6,7 @@
     android:id="@+id/backgrounds">
 
     <RelativeLayout
-        android:id="@+id/pdt_layout_item"
+        android:id="@+id/thismonth_layout_item"
         android:layout_width="fill_parent"
         android:layout_height="67dp"
         android:layout_alignParentTop="true"
@@ -16,7 +16,7 @@
 
         <TextView
             android:textAllCaps="false"
-            android:id="@+id/txt_pdt_name"
+            android:id="@+id/txt_thismonth_name"
             android:layout_width="wrap_content"
             android:gravity="center"
             android:textColor="#ffffff"
@@ -29,10 +29,10 @@
             android:gravity="center"
             android:textColor="#ffffff"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/txt_pdt_name"
+            android:layout_below="@+id/txt_thismonth_name"
             android:padding="6dp" />
         <TextView
-            android:id="@+id/txt_pdt_price"
+            android:id="@+id/txt_thismonth_price"
             android:layout_width="wrap_content"
             android:gravity="center"
             android:textColor="#ffffff"
@@ -40,19 +40,19 @@
             android:layout_below="@+id/txt_rating_value"
             android:padding="6dp" />
         <TextView
-            android:id="@+id/txt_pdt_desc"
+            android:id="@+id/txt_thismonth_desc"
             android:layout_width="wrap_content"
             android:gravity="center"
             android:textColor="#ffffff"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/txt_pdt_price"
+            android:layout_below="@+id/txt_thismonth_price"
             android:padding="6dp" />
         <TextView
-            android:id="@+id/txt_pdt_genre"
+            android:id="@+id/txt_thismonth_genre"
             android:layout_width="wrap_content"
             android:gravity="center"
             android:textColor="#ffffff"
-            android:layout_alignRight="@+id/txt_pdt_name"
+            android:layout_alignRight="@+id/txt_thismonth_name"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:padding="6dp" />
@@ -60,7 +60,7 @@
             android:id="@+id/imgbtn_favorite"
             android:layout_width="wrap_content"
             android:layout_height="60dp"
-            android:layout_alignBottom="@+id/txt_pdt_desc"
+            android:layout_alignBottom="@+id/txt_thismonth_desc"
             android:layout_alignParentRight="true"
             android:layout_marginRight="1dp"
             android:background="@null"

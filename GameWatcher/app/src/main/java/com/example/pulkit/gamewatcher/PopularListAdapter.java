@@ -21,7 +21,6 @@ public class PopularListAdapter extends ArrayAdapter<Product>{
     private Context context;
     List<Product> products;
     SharedPreferenceFavorite sharedPreferenceFavorite;
-    SharedPreferenceProduct sharedPreferenceProduct;
 
 
     public PopularListAdapter(Context context, List<Product> products) {

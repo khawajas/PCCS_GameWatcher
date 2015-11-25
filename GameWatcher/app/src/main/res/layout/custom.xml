@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5dp" />
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#FFF"
+        android:layout_toRightOf="@+id/image"/>/>
+
+    <Button
+        android:id="@+id/dialogButtonJanuary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="January"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_below="@+id/image"
+        />
+    <Button
+        android:id="@+id/dialogButtonDecember"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="December"
+        android:layout_marginRight="5dp"
+        android:layout_alignTop="@+id/dialogButtonJanuary"
+        android:layout_toEndOf="@+id/dialogButtonJanuary" />
+
+</RelativeLayout>

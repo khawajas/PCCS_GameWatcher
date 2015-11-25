@@ -3,4 +3,5 @@
     <color name="transparent">#FFFFFF</color>
     <color name="product_list_item_bg">#FFFFFF</color>
     <color name="view_divider_color">#BABABA</color>
+    <color name="solid">#80000000</color>
 </resources>

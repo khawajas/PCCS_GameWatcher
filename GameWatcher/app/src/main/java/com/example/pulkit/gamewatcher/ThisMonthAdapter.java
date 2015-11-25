@@ -15,20 +15,22 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProductListAdapter extends ArrayAdapter<Product>{
+public class ThisMonthAdapter extends ArrayAdapter<Product>{
 
     private Context context;
     List<Product> products;
     SharedPreferenceFavorite sharedPreferenceFavorite;
+    SharedPreferenceMonth sharedPreferenceMonth;
 
 
 
-    public ProductListAdapter(Context context, List<Product> products) {
-        super(context, R.layout.product_list_item, products);
+    public ThisMonthAdapter(Context context, List<Product> products) {
+        super(context, R.layout.this_month_item, products);
         this.context = context;
         this.products = products;
         getFilter();
         sharedPreferenceFavorite = new SharedPreferenceFavorite();
+        sharedPreferenceMonth = new SharedPreferenceMonth();
     }
 
     public abstract class ProductFilter extends Filter {
@@ -73,9 +75,9 @@ public class ProductListAdapter extends ArrayAdapter<Product>{
     }
 
     private class ViewHolder {
-        TextView productGameTxt;
-        ImageView favoriteImg;
-        TextView productGenre;
+        TextView thismonthGameTxt;
+        ImageView thismonthImg;
+        TextView thismonthGenre;
 
     }
 
@@ -83,7 +85,6 @@ public class ProductListAdapter extends ArrayAdapter<Product>{
     public int getCount() {
         return products.size();
     }
-
     @Override
     public Product getItem(int position) {
         return products.get(position);
@@ -94,40 +95,37 @@ public class ProductListAdapter extends ArrayAdapter<Product>{
     }
 
 
-
-
-
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder = null;
         if (convertView == null) {
             LayoutInflater inflater = (LayoutInflater) context
                     .getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
-            convertView = inflater.inflate(R.layout.product_list_item, null);
+            convertView = inflater.inflate(R.layout.this_month_item, null);
             holder = new ViewHolder();
-            holder.productGameTxt = (TextView) convertView
-                    .findViewById(R.id.txt_pdt_name);
-            holder.favoriteImg = (ImageView) convertView
+            holder.thismonthGameTxt = (TextView) convertView
+                    .findViewById(R.id.txt_thismonth_name);
+            holder.thismonthImg = (ImageView) convertView
                     .findViewById(R.id.imgbtn_favorite);
-            holder.productGenre = (TextView) convertView.findViewById(R.id.txt_pdt_genre);
+            holder.thismonthGenre = (TextView) convertView.findViewById(R.id.txt_thismonth_genre);
 
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
         Product product = (Product) getItem(position);
-        holder.productGameTxt.setText(product.getGame());
-        holder.productGenre.setText(product.getGenre());
+        holder.thismonthGameTxt.setText(product.getGame());
+        holder.thismonthGenre.setText(product.getGenre());
 
         /*If a product exists in shared preferences then set heart_red drawable
          * and set a tag*/
 
         if (checkFavoriteItem(product)) {
-            holder.favoriteImg.setImageResource(R.mipmap.heart_red);
-            holder.favoriteImg.setTag("red");
+            holder.thismonthImg.setImageResource(R.mipmap.heart_red);
+            holder.thismonthImg.setTag("red");
         } else {
-            holder.favoriteImg.setImageResource(R.mipmap.heart_grey);
-            holder.favoriteImg.setTag("grey");
+            holder.thismonthImg.setImageResource(R.mipmap.heart_grey);
+            holder.thismonthImg.setTag("grey");
         }
         return convertView;
     }

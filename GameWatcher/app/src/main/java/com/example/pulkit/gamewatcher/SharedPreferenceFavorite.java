@@ -73,4 +73,5 @@ public class SharedPreferenceFavorite {
 
         return (ArrayList<Product>) favorites;
     }
+
 }

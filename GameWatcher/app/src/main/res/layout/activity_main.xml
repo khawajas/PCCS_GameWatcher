@@ -1,8 +1,8 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     android:background="@mipmap/galaxys"
     tools:context=".MainActivity" >
 
@@ -16,7 +16,9 @@
             android:textAllCaps="false"
             android:id="@+id/list_view"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent" />
+            android:layout_height="fill_parent"
+            android:headerDividersEnabled="false"
+            android:textFilterEnabled="false" />
 
     </FrameLayout>
 

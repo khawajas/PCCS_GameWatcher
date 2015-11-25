@@ -3,28 +3,33 @@
 
     <item
         android:id="@+id/menu_favorites"
-        android:orderInCategory="299"
+        android:orderInCategory="1"
         app:showAsAction="ifRoom|withText"
         android:title="@string/favorites"/>
 
 
     <item
         android:id="@+id/most_popular"
-        android:orderInCategory="200"
+        android:orderInCategory="4"
         app:showAsAction="ifRoom|withText"
         android:title="@string/mostpopular"/>
 
     <item
         android:id="@+id/search"
-        android:orderInCategory="202"
+        android:orderInCategory="2"
         app:showAsAction="ifRoom|withText"
         android:title="@string/search"/>
 
     <item
         android:id="@+id/suggested"
-        android:orderInCategory="201"
+        android:orderInCategory="3"
         app:showAsAction="ifRoom|withText"
         android:title="@string/suggested"/>
+    <item
+        android:id="@+id/thismonth"
+        android:orderInCategory="5"
+        app:showAsAction="ifRoom|withText"
+        android:title="@string/thismonth"/>
 
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"

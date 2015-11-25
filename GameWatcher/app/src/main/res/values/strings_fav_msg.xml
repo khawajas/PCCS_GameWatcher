@@ -13,6 +13,7 @@
 <string name="favorites_remove_msg">Press/hold on the game to remove from favorites.</string>
 <string name="nothing_pop">Nothing is trending or popular right now!</string>
 <string name="nothing_suggested">No current suggestions for you!</string>
+    <string name="nothing_coming">No upcoming games.</string>
 <string name ="comeback">Please check again later!</string>
 <string name ="ok">Please click OK to continue.</string>
 <string name ="filtergames">Now filtering your games...</string>

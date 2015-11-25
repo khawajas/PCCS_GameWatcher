@@ -4,6 +4,7 @@ import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -16,18 +17,16 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.RadioButton;
+import android.widget.TextView;
 import android.widget.Toast;
-
 import java.util.ArrayList;
-import java.util.List;
+
 
 public class ProductListFragment extends Fragment {
 
     CheckBox RPG, ADVENTURE, FPS, RTS, PUZZLE;
 
     public static final String ARG_ITEM_ID = "Product List";
-
 
     View view;
     ArrayList<Product> favorites;
@@ -58,18 +57,21 @@ public class ProductListFragment extends Fragment {
 
         RPG = (CheckBox) view.findViewById(R.id.checkRPG);
         RPG.setChecked(false);
+        RPG.setSaveEnabled(false);
         ADVENTURE = (CheckBox) view.findViewById(R.id.checkADVENTURE);
         ADVENTURE.setChecked(false);
+        ADVENTURE.setSaveEnabled(false);
         FPS = (CheckBox) view.findViewById(R.id.checkFPS);
         FPS.setChecked(false);
+        FPS.setSaveEnabled(false);
         RTS = (CheckBox) view.findViewById(R.id.checkRTS);
         RTS.setChecked(false);
+        RTS.setSaveEnabled(false);
         PUZZLE = (CheckBox) view.findViewById(R.id.checkPUZZLE);
         PUZZLE.setChecked(false);
-
+        PUZZLE.setSaveEnabled(false);
 
         products = new ArrayList<Product>();
-
 
         ADVENTURE.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -117,14 +119,14 @@ public class ProductListFragment extends Fragment {
                             getResources().getString(R.string.filtergames),
                             getResources().getString(R.string.ok));
 
-                    products.add(new Product(9, "Mass Effect: Andromeda", "11/04/2015", "PS4/XBO", 0, "FPS"));
-                    products.add(new Product(11, "Evolve", "11/04/2015", "PC", 0, "FPS"));
-                    products.add(new Product(18, "Duke Nukem 3D", "11/21/2015", "PS Vita", 0, "FPS"));
-                    products.add(new Product(20, "Call of Duty: Black Ops III", "10/31/2015", "PS4/XBO", 0, "FPS"));
-                    products.add(new Product(21, "Metal Gear Solid V", "10/29/2015", "PS4", 0, "FPS"));
-                    products.add(new Product(25, "Tom Clancy's The Division", "03/08/2016", "XBox/PS4/XBO", 0, "FPS"));
-                    products.add(new Product(26, "Call of Duty: Black Ops III", "10/31/2015", "PS4/XBO", 0, "FPS"));
-                    products.add(new Product(27, "Resident Evil Zero", "04/05/2016", "PC/XBO/X360/PS4/PS3", 0, "FPS"));
+                    products.add(new Product(9, "Mass Effect: Andromeda", "11/04/2015", "PS4/XBO", 0, "Shooter"));
+                    products.add(new Product(11, "Evolve", "11/04/2015", "PC", 0, "Shooter"));
+                    products.add(new Product(18, "Duke Nukem 3D", "11/21/2015", "PS Vita", 0, "Shooter"));
+                    products.add(new Product(20, "Call of Duty: Black Ops III", "10/31/2015", "PS4/XBO", 0, "Shooter"));
+                    products.add(new Product(21, "Metal Gear Solid V", "10/29/2015", "PS4", 0, "Shooter"));
+                    products.add(new Product(25, "Tom Clancy's The Division", "03/08/2016", "XBox/PS4/XBO", 0, "Shooter"));
+                    products.add(new Product(26, "Call of Duty: Black Ops III", "10/31/2015", "PS4/XBO", 0, "Shooter"));
+                    products.add(new Product(27, "Resident Evil Zero", "04/05/2016", "PC/XBO/X360/PS4/PS3", 0, "Shooter"));
 
                     productListAdapter.notifyDataSetChanged();
 
@@ -238,25 +240,25 @@ public class ProductListFragment extends Fragment {
         products.add(new Product(6, "Pokemon Rainbow", "10/30/2015", "3DS", 0, "RPG"));
         products.add(new Product(7, "Destiny: The Taken King", "11/01/2015", "PS4/PC", 0, "RPG"));
         products.add(new Product(8, "Fallout 4", "11/02/2015", "PS4/XBO/PC", 0, "RPG"));
-        products.add(new Product(9, "Mass Effect: Andromeda", "11/04/2015", "PS4/XBO", 0, "FPS"));
+        products.add(new Product(9, "Mass Effect: Andromeda", "11/04/2015", "PS4/XBO", 0, "Shooter"));
         products.add(new Product(10, "No Man's Sky", "11/04/2015", "PS4", 0, "Adventure"));
-        products.add(new Product(11, "Evolve", "11/04/2015", "PC", 0, "FPS"));
+        products.add(new Product(11, "Evolve", "11/04/2015", "PC", 0, "Shooter"));
         products.add(new Product(12, "Citizens of Earth", "11/05/2015", "PS4/XBox 1", 0, "RPG"));
         products.add(new Product(13, "Dying Light", "11/06/2015", "PS4", 0, "RPG"));
         products.add(new Product(14, "Heroes of Might & Magic III", "11/07/2015", "PS4", 0, "RTS"));
         products.add(new Product(15, "Life is Strange", "11/07/2015", "PC", 0, "Adventure"));
         products.add(new Product(16, "Grey Goo", "11/08/2015", "PC", 0, "RTS"));
         products.add(new Product(17, "Pix the Cat", "11/22/2015", "PC", 0, "Puzzle"));
-        products.add(new Product(18, "Duke Nukem 3D", "11/21/2015", "PS Vita", 0, "FPS"));
+        products.add(new Product(18, "Duke Nukem 3D", "11/21/2015", "PS Vita", 0, "Shooter"));
         products.add(new Product(19, "Saints Row IV", "11/20/2015", "XBox/PS4", 0, "RPG"));
-        products.add(new Product(20, "Call of Duty: Black Ops III", "10/31/2015", "PS4/XBO", 0, "FPS"));
-        products.add(new Product(21, "Metal Gear Solid V", "10/29/2015", "PS4", 0, "FPS"));
+        products.add(new Product(20, "Call of Duty: Black Ops III", "10/31/2015", "PS4/XBO", 0, "Shooter"));
+        products.add(new Product(21, "Metal Gear Solid V", "10/29/2015", "PS4", 0, "Shooter"));
         products.add(new Product(22, "Age Of Mythology", "11/31/2015", "PC", 0, "RTS"));
         products.add(new Product(23, "Fruit Ninja", "11/31/2015", "PC", 0, "Puzzle"));
         products.add(new Product(24, "Mirror's Edge Catalyst", "02/23/2016", "PS4", 0, "Adventure"));
-        products.add(new Product(25, "Tom Clancy's The Division", "03/08/2016", "XBox/PS4/XBO", 0, "FPS"));
-        products.add(new Product(26, "Call of Duty: Black Ops III", "10/31/2015", "PS4/XBO", 0, "FPS"));
-        products.add(new Product(27, "Resident Evil Zero", "04/05/2016", "PC/XBO/X360/PS4/PS3", 0, "FPS"));
+        products.add(new Product(25, "Tom Clancy's The Division", "03/08/2016", "XBox/PS4/XBO", 0, "Shooter"));
+        products.add(new Product(26, "Call of Duty: Black Ops III", "10/31/2015", "PS4/XBO", 0, "Shooter"));
+        products.add(new Product(27, "Resident Evil Zero", "04/05/2016", "PC/XBO/X360/PS4/PS3", 0, "Shooter"));
         products.add(new Product(28, "Tetris Ultimate", "11/11/2014", "PS4", 0, "Puzzle"));
         products.add(new Product(29, "Chariot", "11/03/2015", "WII U", 0, "Adventure"));
 
@@ -264,7 +266,6 @@ public class ProductListFragment extends Fragment {
 
     public void findViewsById(View view) {
         productListView = (ListView) view.findViewById(R.id.list_product);
-
 
         if (products != null) {
 
@@ -277,7 +278,7 @@ public class ProductListFragment extends Fragment {
                                                                                int position, long arg3) {
 
                                                            Product product = (Product) parent.getItemAtPosition(position);
-                                                           Toast.makeText(activity, product.toString(), Toast.LENGTH_LONG).show();
+
 
                                                        }
                                                    }
@@ -290,6 +291,7 @@ public class ProductListFragment extends Fragment {
                 public boolean onItemLongClick(AdapterView<?> parent, View view,
                                                int position, long id) {
 
+                    Product product = (Product) parent.getItemAtPosition(position);
                     ImageView button = (ImageView) view
                             .findViewById(R.id.imgbtn_favorite);
 
@@ -304,7 +306,7 @@ public class ProductListFragment extends Fragment {
                         sharedPreferenceFavorite.removeFavorite(activity, products.get(position));
                         sharedPreferencePopular.removeGeneric(activity, products.get(position));
                         button.setTag("grey");
-                        button.setImageResource(R.mipmap.grey_heart);
+                        button.setImageResource(R.mipmap.heart_grey);
                         Toast.makeText(activity, activity.getResources().getString(R.string.remove_favr),
                                 Toast.LENGTH_SHORT).show();
 

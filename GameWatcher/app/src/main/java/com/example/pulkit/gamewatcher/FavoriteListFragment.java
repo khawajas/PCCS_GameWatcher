@@ -28,9 +28,7 @@ public class FavoriteListFragment extends Fragment {
 
     ListView favoriteList;
     SharedPreferenceFavorite sharedPreferenceFavorite;
-    SharedPreferenceFavoriteCopy sharedPreferenceFavoriteCopy;
     List<Product> favorites;
-    List<Product> favoritescopy;
 
     Activity activity;
     ProductListAdapter productListAdapter;
@@ -40,7 +38,6 @@ public class FavoriteListFragment extends Fragment {
         super.onCreate(savedInstanceState);
         activity = getActivity();
         sharedPreferenceFavorite = new SharedPreferenceFavorite();
-        sharedPreferenceFavoriteCopy = new SharedPreferenceFavoriteCopy();
     }
 
     @Override
@@ -50,7 +47,6 @@ public class FavoriteListFragment extends Fragment {
                 false);
 
         favorites = sharedPreferenceFavorite.getFavorites(activity);
-        favoritescopy = sharedPreferenceFavoriteCopy.getFavorites(activity);
 
         final ViewSwitcher viewSwitcher = (ViewSwitcher) view.findViewById(R.id.viewSwitcher);
 
@@ -69,7 +65,7 @@ public class FavoriteListFragment extends Fragment {
                         getResources().getString(R.string.no_favorites_msg));
             }
 
-            favoriteList = (ListView) view.findViewById(R.id.list_product);
+            favoriteList = (ListView) view.findViewById(R.id.list_favorite);
             if (favorites != null) {
 
                 favorites = sharedPreferenceFavorite.getFavorites(activity);
@@ -78,8 +74,8 @@ public class FavoriteListFragment extends Fragment {
 
                 favoriteList.setOnItemClickListener(new OnItemClickListener() {
 
-                                                        public void onItemClick(AdapterView<?> parent, View arg1,
-                                                                                int position, long arg3) {
+                                                        public void onItemClick(AdapterView<?> parent, View view,
+                                                                                int position, long id) {
 
                                                             Product product = (Product) parent.getItemAtPosition(position);
                                                             Toast.makeText(activity, product.toString3(), Toast.LENGTH_SHORT).show();
@@ -114,7 +110,7 @@ public class FavoriteListFragment extends Fragment {
                                                                     sharedPreferenceFavorite.removeFavorite(activity,
                                                                             favorites.get(position));
                                                                     button.setTag("grey");
-                                                                    button.setImageResource(R.mipmap.grey_heart);
+                                                                    button.setImageResource(R.mipmap.heart_grey);
                                                                     productListAdapter.remove(favorites
                                                                             .get(position));
                                                                     Toast.makeText(
