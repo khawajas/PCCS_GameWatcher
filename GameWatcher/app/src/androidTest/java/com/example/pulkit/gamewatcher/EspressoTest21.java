@@ -25,6 +25,12 @@ public class EspressoTest21 extends ActivityInstrumentationTestCase2<MainActivit
 
     public void testClickAndCheckDisplayed() {
 
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         onView(withId(R.id.checkADVENTURE)).perform(click());
         onView(withText("OK")).perform(click());
 

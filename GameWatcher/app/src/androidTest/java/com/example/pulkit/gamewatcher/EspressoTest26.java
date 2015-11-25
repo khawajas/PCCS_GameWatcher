@@ -6,21 +6,21 @@ import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.action.ViewActions.longClick;
 import static android.support.test.espresso.action.ViewActions.pressMenuKey;
-import static android.support.test.espresso.assertion.ViewAssertions.doesNotExist;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
-import static android.support.test.espresso.matcher.ViewMatchers.isClickable;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
-import static android.support.test.espresso.matcher.ViewMatchers.withContentDescription;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 
-//Scenario: Multiple Suggested Item Genres [Sad Path] for Recommended/Suggested Tab [Iteration 3]
+/**
+ * Created by Pulkit on 11/25/2015.
+ *
+ * //Scenario: Upcoming Games Interaction [Happy Path]: for Upcoming Games [IT 3]
+ */
+public class EspressoTest26 extends ActivityInstrumentationTestCase2<MainActivity> {
 
-//NOTE: Make sure when you run this, nothing is favourited
+    boolean favoriter = false;
 
-public class EspressoTest23 extends ActivityInstrumentationTestCase2<MainActivity> {
-
-    public EspressoTest23() {
+    public EspressoTest26() {
         super(MainActivity.class);
     }
 
@@ -29,17 +29,10 @@ public class EspressoTest23 extends ActivityInstrumentationTestCase2<MainActivit
         getActivity();
     }
 
-    boolean check = false;
 
     public void testClickAndCheckDisplayed() {
 
-        try {
-            Thread.sleep(500);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        onView(withText("Bloodborne: The Old Hunters")).check(matches(isDisplayed())).perform(longClick());
+        onView(withId(R.id.content_frame)).perform(pressMenuKey());
 
         try {
             Thread.sleep(500);
@@ -47,10 +40,42 @@ public class EspressoTest23 extends ActivityInstrumentationTestCase2<MainActivit
             e.printStackTrace();
         }
 
-        onView(withText("Kingdom Hearts III")).check(matches(isDisplayed())).perform(longClick());
+        onView(withText("Upcoming")).check(matches(isDisplayed())).perform(click());
+
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        onView(withText("Yes")).check(matches(isDisplayed())).perform(click());
+
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        onView(withId(R.id.spinner)).check(matches(isDisplayed())).perform(click());
+
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        onView(withText("February")).check(matches(isDisplayed())).perform(click());
 
         try {
             Thread.sleep(500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        onView(withId(R.id.list_thismonth)).check(matches(isDisplayed())).perform(longClick());
+
+        try {
+            Thread.sleep(1500);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -63,7 +88,8 @@ public class EspressoTest23 extends ActivityInstrumentationTestCase2<MainActivit
             e.printStackTrace();
         }
 
-        onView(withText("Suggested")).check(matches(isDisplayed())).perform(click());
+
+        onView(withText("Favorites")).check(matches(isDisplayed())).perform(click());
 
         try {
             Thread.sleep(500);
@@ -71,16 +97,10 @@ public class EspressoTest23 extends ActivityInstrumentationTestCase2<MainActivit
             e.printStackTrace();
         }
 
-        onView(withText("Adventure")).check((doesNotExist()));
-        check = true;
+        favoriter = true;
 
-        try {
-            Thread.sleep(500);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        assertTrue(favoriter);
 
-        assertTrue(check);
     }
 
 }

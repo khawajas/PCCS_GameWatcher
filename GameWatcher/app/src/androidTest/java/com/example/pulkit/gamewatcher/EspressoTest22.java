@@ -14,6 +14,8 @@ import static android.support.test.espresso.matcher.ViewMatchers.withText;
 
 //Scenario: Display Suggested Items [Happy Path] for Recommended/Suggested Tab [Iteration 3]
 
+//NOTE: Make sure nothing is favourited
+
 public class EspressoTest22 extends ActivityInstrumentationTestCase2<MainActivity> {
 
     public EspressoTest22() {
@@ -26,7 +28,20 @@ public class EspressoTest22 extends ActivityInstrumentationTestCase2<MainActivit
     }
 
     public void testClickAndCheckDisplayed() {
+
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         onView(withId(R.id.list_product)).perform(longClick());
+
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
         onView(withId(R.id.content_frame)).perform(pressMenuKey());
 
@@ -35,6 +50,7 @@ public class EspressoTest22 extends ActivityInstrumentationTestCase2<MainActivit
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
         onView(withText("Suggested")).check(matches(isDisplayed())).perform(click());
 
         assertNotNull(R.id.suggested);

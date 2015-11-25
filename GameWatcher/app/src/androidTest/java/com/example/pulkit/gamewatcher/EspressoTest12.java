@@ -56,7 +56,7 @@ public class EspressoTest12 extends ActivityInstrumentationTestCase2<MainActivit
             e.printStackTrace();
         }
 
-        assertNotNull(R.id.list_view2);
+        assertNotNull(R.id.list_viewsearch);
 
 
     }

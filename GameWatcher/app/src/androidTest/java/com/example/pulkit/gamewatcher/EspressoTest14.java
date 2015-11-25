@@ -10,8 +10,6 @@ import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 
-
-
 //Scenario: Most Popular Favorited Limit [Sad Path] for Most Popular/Trending [IT 2]
 
 public class EspressoTest14 extends ActivityInstrumentationTestCase2<MainActivity> {

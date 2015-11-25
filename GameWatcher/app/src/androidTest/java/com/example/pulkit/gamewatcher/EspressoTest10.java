@@ -41,10 +41,10 @@ public class EspressoTest10 extends ActivityInstrumentationTestCase2<MainActivit
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        onView(withId(R.id.list_view2)).perform(swipeDown());
+        onView(withId(R.id.list_viewsearch)).perform(swipeDown());
         onView(withId(R.id.searchbar)).check(matches(isDisplayed())).perform(click());
         onView(withId(R.id.searchbar)).perform(typeTextIntoFocusedView("Final"));
-        assertNotNull(R.id.list_view2);
+        assertNotNull(R.id.list_viewsearch);
 
     }
 }

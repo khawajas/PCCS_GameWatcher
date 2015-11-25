@@ -10,13 +10,14 @@ import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 
-//Scenario: No Suggestions [Happy Path] for Recommended/Suggested Tab [Iteration 3]
+/**
+ * Created by Pulkit on 11/25/2015.
+ *
+ * //Scenario: No Upcoming Games [Happy Path]: for Upcoming Games [IT 3]
+ */
+public class EspressoTest25 extends ActivityInstrumentationTestCase2<MainActivity> {
 
-//NOTE: Make sure nothing is favourited
-
-public class EspressoTest24 extends ActivityInstrumentationTestCase2<MainActivity> {
-
-    public EspressoTest24() {
+    public EspressoTest25() {
         super(MainActivity.class);
     }
 
@@ -24,15 +25,10 @@ public class EspressoTest24 extends ActivityInstrumentationTestCase2<MainActivit
         super.setUp();
         getActivity();
     }
+
+
     public void testClickAndCheckDisplayed() {
 
-        boolean check = false;
-
-        try {
-            Thread.sleep(500);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
 
         onView(withId(R.id.content_frame)).perform(pressMenuKey());
 
@@ -42,7 +38,7 @@ public class EspressoTest24 extends ActivityInstrumentationTestCase2<MainActivit
             e.printStackTrace();
         }
 
-        onView(withText("Suggested")).check(matches(isDisplayed())).perform(click());
+        onView(withText("Upcoming")).check(matches(isDisplayed())).perform(click());
 
         try {
             Thread.sleep(500);
@@ -50,15 +46,7 @@ public class EspressoTest24 extends ActivityInstrumentationTestCase2<MainActivit
             e.printStackTrace();
         }
 
-        assertNotNull("No current suggestions for you!", R.string.no_suggested_msg);
-
-        try {
-            Thread.sleep(500);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        assertNotNull("Please check again later!", R.string.comeback);
+        onView(withText("No")).check(matches(isDisplayed())).perform(click());
 
         try {
             Thread.sleep(500);
@@ -69,9 +57,7 @@ public class EspressoTest24 extends ActivityInstrumentationTestCase2<MainActivit
         onView(withText("OK")).perform(click());
 
         onView(withId(R.id.content_frame));
-        check = true;
 
-        assertTrue(check);
 
     }
 
